@@ -1,0 +1,9 @@
+D:\r\ws\godot\EasternOdyssey\.mono\temp\obj\Debug\Eastern Odyssey.csproj.AssemblyReference.cache
+D:\r\ws\godot\EasternOdyssey\.mono\temp\obj\Debug\Eastern Odyssey.GeneratedMSBuildEditorConfig.editorconfig
+D:\r\ws\godot\EasternOdyssey\.mono\temp\obj\Debug\Eastern Odyssey.AssemblyInfoInputs.cache
+D:\r\ws\godot\EasternOdyssey\.mono\temp\obj\Debug\Eastern Odyssey.AssemblyInfo.cs
+D:\r\ws\godot\EasternOdyssey\.mono\temp\obj\Debug\Eastern Odyssey.csproj.CoreCompileInputs.cache
+D:\r\ws\godot\EasternOdyssey\.mono\temp\bin\Debug\Eastern Odyssey.dll
+D:\r\ws\godot\EasternOdyssey\.mono\temp\bin\Debug\Eastern Odyssey.pdb
+D:\r\ws\godot\EasternOdyssey\.mono\temp\obj\Debug\Eastern Odyssey.dll
+D:\r\ws\godot\EasternOdyssey\.mono\temp\obj\Debug\Eastern Odyssey.pdb

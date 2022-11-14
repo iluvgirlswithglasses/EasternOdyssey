@@ -1,17 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cajukskc113kf"]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource type="Script" path="res://Script/Object/Player.cs" id="1_p38lx"]
-[ext_resource type="Texture2D" uid="uid://deaxtyv6l2jd1" path="res://Sprite/Player/idle.png" id="1_pft6a"]
+[ext_resource path="res://Sprite/Player/idle.png" type="Texture" id=1]
+[ext_resource path="res://Script/Object/Player.cs" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kveot"]
-size = Vector2(30, 40)
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6.5, 10 )
 
-[node name="PlayerBody" type="CharacterBody2D"]
-script = ExtResource("1_p38lx")
+[node name="Player" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
+script = ExtResource( 2 )
 
-[node name="PlayerCollision" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_kveot")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.5, 0 )
+shape = SubResource( 1 )
 
-[node name="Idle" type="Sprite2D" parent="."]
-scale = Vector2(2, 2)
-texture = ExtResource("1_pft6a")
+[node name="Idle" type="Sprite" parent="."]
+texture = ExtResource( 1 )
