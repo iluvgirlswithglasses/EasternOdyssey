@@ -11,7 +11,12 @@ public class IceFairy : Actor {
 	public override void _Ready() {
 		base._Ready();
 		Health = 20;
-		Layers = Constants.ENEMY_LAYER;
+
+		// these objects belongs to NO LAYER
+		// because if they do, they will collide with each others
+		CollisionMask = Constants.ENEMY_LAYER;
+
+		AddCollisionExceptionWith(this);
 	}
 
 	public override void _Process(float delta) {

@@ -22,7 +22,7 @@ public class Bullet : KinematicBody2D {
 
 		Velocity = new Vector2((float) Math.Cos(Angle)*Speed, (float) Math.Sin(Angle)*Speed);
 
-		Layers = layers;
+		CollisionLayer = layers;
 		Target = target;
 	}
 

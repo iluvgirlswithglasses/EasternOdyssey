@@ -10,7 +10,9 @@ public class Player : Actor {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		base._Ready();
-		Layers = Constants.PLAYER_LAYER;
+		
+		CollisionLayer = Constants.PLAYER_LAYER;
+
 		Health = 100;
 		ScreenSize = GetViewportRect().Size;
 	}
