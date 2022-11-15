@@ -1,9 +1,9 @@
 using Godot;
 using System;
 
-public class Bullet : KinematicBody2D
-{
-	public int Target;	// the bullet will deal damage to this target type
+public class Bullet : KinematicBody2D {
+
+	[Export]
 	public int Damage;
 
 	// temporarily, these values are constants
@@ -13,8 +13,7 @@ public class Bullet : KinematicBody2D
 	
 	public Vector2 Velocity;
 
-	public void Init(int t, int d, float s, float a, float angle) {
-		Target = t;
+	public void Init(int d, float s, float a, float angle) {
 		Damage = d;
 		Speed = s;
 		Acceleration = a;
@@ -24,15 +23,21 @@ public class Bullet : KinematicBody2D
 	}
 
 	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
+	public override void _Ready() {
 		// remove this later
-		Init(0, 0, 800.0f, 0.0f, 0.0f);
+		Init(5, 800.0f, 0.0f, 0.0f);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(float delta)
-	{
-		MoveAndSlide(Velocity);
+	public override void _Process(float delta) {
+		Vector2 collision = MoveAndSlide(Velocity);
+		if (collision != null) {
+			for (int i = 0; i < GetSlideCount(); i++) {
+				var collider = (Actor) GetSlideCollision(i).Collider;
+				if (collider.CollisionLayer == this.Layers)
+					collider.TakeDamage(Damage);
+					GetParent().RemoveChild(this);
+			}
+		}
 	}
 }

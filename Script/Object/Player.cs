@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public class Player : KinematicBody2D {
+public class Player : Actor {
 
 	public const float Speed = 20000.0f;
 
@@ -10,8 +10,8 @@ public class Player : KinematicBody2D {
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
+		Health = 100;
 		ScreenSize = GetViewportRect().Size;
-		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
