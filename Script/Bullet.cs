@@ -38,7 +38,6 @@ public class Bullet : KinematicBody2D {
 			for (int i = 0; i < GetSlideCount(); i++) {
 				var collider = (KinematicBody2D) GetSlideCollision(i).Collider;
 				if (collider.IsInGroup(Target)) {
-					GD.Print(collider.GetGroups()[0]);
 					var target = (Actor) GetSlideCollision(i).Collider;
 					target.TakeDamage(Damage);
 					GetParent().RemoveChild(this);
