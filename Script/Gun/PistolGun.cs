@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using static Constants;
 
 public partial class PistolGun : Gun {
 
@@ -10,10 +11,12 @@ public partial class PistolGun : Gun {
 	{
 		base._Ready();
 		this.FireRate = 0.2f;
+		this.HostileLayer = Constants.ENEMY_LAYER;
 	}
 
 	public override void Shoot() {
 		KinematicBody2D bullet = (KinematicBody2D) bulletScene.Instance();
+		bullet.Layers = this.HostileLayer;
 		Scene.AddChild(bullet);
 		bullet.Position = GlobalPosition;
 	}

@@ -13,7 +13,6 @@ script = ExtResource( 2 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 1, 0 )
 shape = SubResource( 1 )
-disabled = true
 
 [node name="Pistol" type="Sprite" parent="."]
 position = Vector2( 1, 0 )
