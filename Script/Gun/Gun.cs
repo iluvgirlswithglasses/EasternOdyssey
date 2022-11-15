@@ -8,6 +8,7 @@ public class Gun : Node2D {
 
 	// the layer which this gun will shoot bullets to
 	public uint HostileLayer { get; set; }
+	public string Target { get; set; }
 	
 	protected Node Scene { get; set; }
 	protected KinematicBody2D Parent { get; set; }

@@ -3,29 +3,32 @@ using System;
 
 public class Bullet : KinematicBody2D {
 
-	[Export]
-	public int Damage;
+	// this bullet will only hit this group of target
+	public string Target { get; set; }
 
-	// temporarily, these values are constants
+	public int Damage;
 	public float Speed;
 	public float Acceleration;
 	public float Angle;
 	
 	public Vector2 Velocity;
 
-	public void Init(int d, float s, float a, float angle) {
+	public void Init(int d, float s, float a, float angle, uint layers, string target) {
 		Damage = d;
 		Speed = s;
 		Acceleration = a;
 		Angle = angle;
+		Rotation = angle;
 
 		Velocity = new Vector2((float) Math.Cos(Angle)*Speed, (float) Math.Sin(Angle)*Speed);
+
+		Layers = layers;
+		Target = target;
 	}
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
-		// remove this later
-		Init(5, 800.0f, 0.0f, 0.0f);
+		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,11 +37,13 @@ public class Bullet : KinematicBody2D {
 		if (collision != null) {
 			for (int i = 0; i < GetSlideCount(); i++) {
 				var collider = (KinematicBody2D) GetSlideCollision(i).Collider;
-				if (collider.CollisionLayer == this.Layers) {
+				if (collider.IsInGroup(Target)) {
+					GD.Print(collider.GetGroups()[0]);
 					var target = (Actor) GetSlideCollision(i).Collider;
 					target.TakeDamage(Damage);
+					GetParent().RemoveChild(this);
+					return;
 				}
-				GetParent().RemoveChild(this);
 			}
 		}
 	}

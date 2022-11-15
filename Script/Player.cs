@@ -10,6 +10,7 @@ public class Player : Actor {
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
+		Layers = Constants.PLAYER_LAYER;
 		Health = 100;
 		ScreenSize = GetViewportRect().Size;
 	}
@@ -39,6 +40,13 @@ public class Player : Actor {
 			fix(Position.x, 0, ScreenSize.x), 
 			fix(Position.y, 0, ScreenSize.y)
 		);
+	}
+
+	public override void TakeDamage(int d) {
+		Health -= d;
+		if (Health <= 0) {
+			GD.Print("Game Over");
+		}
 	}
 
 	/** @ tools */

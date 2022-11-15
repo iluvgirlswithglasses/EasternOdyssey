@@ -1,39 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Asset/Object/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://icon.svg" type="Texture" id=2]
-[ext_resource path="res://Script/Enemy/IceFairy.cs" type="Script" id=3]
-
-[sub_resource type="RectangleShape2D" id=1]
+[ext_resource path="res://Asset/Object/Enemy/IceFairy.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 175, 300 )
 
-[node name="Layer1Body" type="KinematicBody2D" parent="."]
-position = Vector2( 751, 303 )
-scale = Vector2( 5, 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Layer1Body"]
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Layer1Body/CollisionShape2D"]
-position = Vector2( -0.0999889, 0.0999985 )
-scale = Vector2( 0.164063, 0.160938 )
-texture = ExtResource( 2 )
-
-[node name="Layer2Body" type="KinematicBody2D" parent="."]
-position = Vector2( 559, 448 )
-scale = Vector2( 5, 5 )
-collision_layer = 2
-collision_mask = 2
-script = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Layer2Body"]
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Layer2Body/CollisionShape2D"]
-position = Vector2( -0.0999889, 0.0999985 )
-scale = Vector2( 0.164063, 0.160938 )
-texture = ExtResource( 2 )
+[node name="IceFairyBody" parent="." instance=ExtResource( 2 )]
+position = Vector2( 860, 459 )
+scale = Vector2( 2, 2 )
