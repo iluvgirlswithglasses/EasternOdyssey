@@ -6,8 +6,7 @@ public class Gun : Node2D {
 	public float FireRate { get; set; }
 	public float Delta { get; set; }
 
-	// the layer which this gun will shoot bullets to
-	public uint HostileLayer { get; set; }
+	// the target of this gun
 	public string Target { get; set; }
 	
 	protected Node Scene { get; set; }

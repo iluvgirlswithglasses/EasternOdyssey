@@ -11,6 +11,7 @@ public class Player : Actor {
 	public override void _Ready() {
 		base._Ready();
 		
+		Layers = Constants.PLAYER_LAYER;
 		CollisionLayer = Constants.PLAYER_LAYER;
 
 		Health = 100;

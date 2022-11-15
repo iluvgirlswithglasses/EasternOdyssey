@@ -10,6 +10,8 @@ public class IceFairyFrontlineSpawner : Spawner {
 	public int XDirection = 1;
 	[Export]
 	public int YDirection = 1;
+	[Export]
+	public double XRadMod = 1;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
@@ -21,7 +23,7 @@ public class IceFairyFrontlineSpawner : Spawner {
 	protected override void Spawn() {
 		IceFairy fairy = (IceFairy) fairyScene.Instance();
 		fairy.f = (d) => { 
-			return new Vector2(XDirection * fairySpeed * (float) Cos(d), YDirection * fairySpeed); 
+			return new Vector2(XDirection * fairySpeed * (float) Cos(d * XRadMod), YDirection * fairySpeed); 
 		};
 		// add
 		Scene.AddChild(fairy);
