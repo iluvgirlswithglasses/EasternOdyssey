@@ -6,10 +6,10 @@ public class Player : Actor {
 	public const float Speed = 20000.0f;
 
 	Vector2 ScreenSize;
-	Vector2 Velocity = Vector2.Zero;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
+		base._Ready();
 		Layers = Constants.PLAYER_LAYER;
 		Health = 100;
 		ScreenSize = GetViewportRect().Size;
@@ -21,16 +21,21 @@ public class Player : Actor {
 		// Get the input direction and handle the movement/deceleration.
 		// As good practice, you should replace UI actions with custom gameplay actions.
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+		Vector2 velocity;
+
 		if (direction != Vector2.Zero) {
 			float monoDirection = 1.21f;
 			if (direction.x != 0 && direction.y != 0)
 				monoDirection = 1.0f;
-			Velocity.x = direction.x * Speed * monoDirection * delta;
-			Velocity.y = direction.y * Speed * monoDirection * delta;
+			velocity = new Vector2(
+				direction.x * Speed * monoDirection * delta, 
+				direction.y * Speed * monoDirection * delta
+			);
 		} else {
-			Velocity.x = Mathf.MoveToward(Velocity.x, 0, Speed);
-			Velocity.y = Mathf.MoveToward(Velocity.y, 0, Speed);
+			velocity = new Vector2(Mathf.MoveToward(Velocity.x, 0, Speed), Mathf.MoveToward(Velocity.y, 0, Speed));
 		}
+
+		Velocity = velocity;
 
 		// apply movement
 		MoveAndSlide(Velocity);

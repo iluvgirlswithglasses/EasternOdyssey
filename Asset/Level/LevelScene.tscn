@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Asset/Object/Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Asset/Object/Enemy/IceFairy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Asset/Spawner/IceFairyFrontlineSpawner.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,6 +12,9 @@ scale = Vector2( 2, 2 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 175, 300 )
 
-[node name="IceFairyBody" parent="." instance=ExtResource( 2 )]
-position = Vector2( 860, 459 )
-scale = Vector2( 2, 2 )
+[node name="IceFairyFrontlineSpawner" parent="." instance=ExtResource( 2 )]
+position = Vector2( 850, 0 )
+
+[node name="IceFairyFrontlineSpawner2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 850, 599 )
+YDirection = -1

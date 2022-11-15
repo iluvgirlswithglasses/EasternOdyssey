@@ -45,5 +45,8 @@ public class Bullet : KinematicBody2D {
 				}
 			}
 		}
+		// check if out of scene
+		if (ScreenTool.IsOutOfScreen(GetViewportRect().Size, Position))
+			GetParent().RemoveChild(this);
 	}
 }
