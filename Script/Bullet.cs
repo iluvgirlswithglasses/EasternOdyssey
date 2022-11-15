@@ -33,10 +33,12 @@ public class Bullet : KinematicBody2D {
 		Vector2 collision = MoveAndSlide(Velocity);
 		if (collision != null) {
 			for (int i = 0; i < GetSlideCount(); i++) {
-				var collider = (Actor) GetSlideCollision(i).Collider;
-				if (collider.CollisionLayer == this.Layers)
-					collider.TakeDamage(Damage);
-					GetParent().RemoveChild(this);
+				var collider = (KinematicBody2D) GetSlideCollision(i).Collider;
+				if (collider.CollisionLayer == this.Layers) {
+					var target = (Actor) GetSlideCollision(i).Collider;
+					target.TakeDamage(Damage);
+				}
+				GetParent().RemoveChild(this);
 			}
 		}
 	}
