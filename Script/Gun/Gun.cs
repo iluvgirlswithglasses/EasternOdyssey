@@ -16,7 +16,7 @@ public class Gun : Node2D {
 	public override void _Ready()
 	{
 		Parent = GetParent<KinematicBody2D>();
-		Scene = Parent.GetParent();
+		Scene = GetTree().Root.GetChild(0);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

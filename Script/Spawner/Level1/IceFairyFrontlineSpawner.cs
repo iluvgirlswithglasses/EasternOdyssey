@@ -4,14 +4,17 @@ using static System.Math;
 public class IceFairyFrontlineSpawner : Spawner {
 
 	private PackedScene fairyScene = (PackedScene) GD.Load("res://Asset/Object/Enemy/IceFairy.tscn");
-	private float fairySpeed = 100f;
 
+	[Export]
+	public float FairySpeed = 100f;
 	[Export]
 	public int XDirection = 1;
 	[Export]
 	public int YDirection = 1;
 	[Export]
 	public double XRadMod = 1;
+	[Export]
+	public float XConst = 0;
 	[Export]
 	public int Health = 5;
 
@@ -24,7 +27,9 @@ public class IceFairyFrontlineSpawner : Spawner {
 		IceFairy fairy = (IceFairy) fairyScene.Instance();
 		fairy.Health = Health;
 		fairy.f = (d) => { 
-			return new Vector2(XDirection * fairySpeed * (float) Cos(d * XRadMod), YDirection * fairySpeed); 
+			return new Vector2(
+				XDirection * FairySpeed * (float) Cos(d * XRadMod) + XConst, YDirection * FairySpeed
+			); 
 		};
 		// add
 		Scene.AddChild(fairy);
