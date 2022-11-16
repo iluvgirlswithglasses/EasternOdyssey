@@ -21,9 +21,8 @@ public class Spawner : Node2D {
     public override void _Ready() {
         Scene = GetTree().Root.GetChild(0);
         Manager = GetParent<SpawnerManager>();
-        // `Started` is set to true by default
-        WaitTime = 0;
-        Started = true;
+        if (WaitTime == 0)
+            Started = true;
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,6 +30,7 @@ public class Spawner : Node2D {
         Delta += delta;
         if (!Started) {
             if (Delta >= WaitTime) {
+                Delta = 0.0f;
                 Started = true;
             } else {
                 return;
