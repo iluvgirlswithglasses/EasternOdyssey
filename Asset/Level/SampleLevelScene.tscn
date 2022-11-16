@@ -12,9 +12,15 @@ scale = Vector2( 2, 2 )
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 175, 300 )
 
-[node name="IceFairyFrontlineSpawner" parent="." instance=ExtResource( 2 )]
+[node name="IceFairy-00-00" parent="." instance=ExtResource( 2 )]
 position = Vector2( 850, 0 )
+EnemyCount = 5
+SpawnRate = 1.0
+XRadMod = 0.75
 
-[node name="IceFairyFrontlineSpawner2" parent="." instance=ExtResource( 2 )]
+[node name="IceFairy-00-01" parent="." instance=ExtResource( 2 )]
 position = Vector2( 850, 599 )
+EnemyCount = 5
+SpawnRate = 1.0
 YDirection = -1
+XRadMod = 0.75

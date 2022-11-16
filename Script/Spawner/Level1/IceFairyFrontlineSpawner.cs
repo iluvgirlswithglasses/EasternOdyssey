@@ -12,16 +12,17 @@ public class IceFairyFrontlineSpawner : Spawner {
 	public int YDirection = 1;
 	[Export]
 	public double XRadMod = 1;
+	[Export]
+	public int Health = 5;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		base._Ready();
-		EnemyCount = 5;
-		SpawnRate = 1;
 	}
 
 	protected override void Spawn() {
 		IceFairy fairy = (IceFairy) fairyScene.Instance();
+		fairy.Health = Health;
 		fairy.f = (d) => { 
 			return new Vector2(XDirection * fairySpeed * (float) Cos(d * XRadMod), YDirection * fairySpeed); 
 		};

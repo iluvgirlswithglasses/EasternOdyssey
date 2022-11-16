@@ -10,7 +10,6 @@ public class IceFairy : Actor {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		base._Ready();
-		Health = 5;
 
 		// these objects belongs to NO LAYER
 		// because if they do, they will collide with each others

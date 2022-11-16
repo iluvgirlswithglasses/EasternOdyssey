@@ -4,7 +4,9 @@ public class Spawner : Node2D {
 
     public Node Scene;
 
+    [Export]
     public uint EnemyCount { get; set; }
+    [Export]
     public float SpawnRate { get; set; }
 
     private float Delta;
