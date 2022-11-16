@@ -4,6 +4,7 @@ using Godot;
 public class IceFairy : Actor {
 
 	private float Delta = 0;
+	public SpawnerManager Manager;
 
 	public Func<float, Vector2> f;	// calculate the Velocity, given time as the parameter
 
@@ -24,7 +25,14 @@ public class IceFairy : Actor {
 		Velocity = f(Delta);
 		MoveAndSlide(Velocity);
 		// if out of scene
-		if (ScreenTool.IsOutOfScreen(GetViewportRect().Size, Position))
+		if (ScreenTool.IsOutOfScreen(GetViewportRect().Size, Position)) {
 			GetParent().RemoveChild(this);
+			Manager.CountLoss();
+		}
+	}
+
+	public override void AnnounceKill() {
+		base.AnnounceKill();
+		Manager.CountKill();
 	}
 }

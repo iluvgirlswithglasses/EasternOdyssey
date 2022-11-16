@@ -19,6 +19,13 @@ public class Actor : KinematicBody2D {
 	/** @ utils */
 	public virtual void TakeDamage(int d) {
 		Health -= d;
-		if (Health <= 0) GetParent().RemoveChild(this);
+		if (Health <= 0) {
+			GetParent().RemoveChild(this);
+			AnnounceKill();
+		}
+	}
+
+	public virtual void AnnounceKill() {
+
 	}
 }
