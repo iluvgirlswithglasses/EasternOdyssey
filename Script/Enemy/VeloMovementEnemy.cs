@@ -4,6 +4,8 @@ using Godot;
 public class VeloMovementEnemy : Actor {
 
 	protected float Delta = 0;
+	// THIS FIELD MUST BE SET BY THE SPAWNER
+	// OTHERWISE THE GAME WILL CRASH
 	public SpawnerManager Manager;
 
 	public Func<float, Vector2> f;	// calculate the Velocity, given time as the parameter

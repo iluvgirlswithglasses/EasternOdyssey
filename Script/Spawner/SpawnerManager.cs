@@ -25,8 +25,7 @@ public class SpawnerManager : Node {
 	// player's kill count
 	public void CountKill() {
 		StageKillCount++;
-		PhaseLossCount++;
-		GD.Print(String.Format("Loss={0}", PhaseLossCount));
+		CountLoss();
 	}
 
 	// number of enemy that's done there role

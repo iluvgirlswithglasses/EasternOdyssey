@@ -8,11 +8,11 @@ public abstract class SpiralGun : Gun {
     [Export]
     public int Damage = 10;
     [Export]
-    public float Speed = 800.0f;
+    public float Speed = 20.0f;
     [Export]
-    public float Acceleration = 400.0f;
+    public float Acceleration = 200.0f;
     [Export]
-    public float RotateSpeed = 0.0f;
+    public float RotateSpeed = 1.0f;
     [Export]
     public int BulletsPerShot = 24;
 
