@@ -34,7 +34,12 @@ public class Bullet : KinematicBody2D {
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta) {
-		Vector2 collision = MoveAndSlide(Velocity);
+		Velocity = new Vector2(Velocity.x + Acceleration, Velocity.y + Acceleration);
+		Move(Velocity);
+	}
+
+	public void Move(Vector2 velocity) {
+		Vector2 collision = MoveAndSlide(velocity);
 		if (collision != null) {
 			for (int i = 0; i < GetSlideCount(); i++) {
 				var collider = (KinematicBody2D) GetSlideCollision(i).Collider;
