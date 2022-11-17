@@ -52,6 +52,7 @@ public class Player : Actor {
 
 	public override void TakeDamage(int d) {
 		Health -= d;
+		GD.Print("Current Health = ", Health);
 		if (Health <= 0) {
 			GD.Print("Game Over");
 		}

@@ -30,9 +30,12 @@ public abstract class SpiralGun : Gun {
 
             // prepare object
             BulletAdv bullet = (BulletAdv) BulletScene.Instance();
+
             bullet.Layers = Constants.NO_LAYER;
             bullet.CollisionLayer = Constants.PLAYER_LAYER;
             bullet.Target = this.Target;
+            bullet.Damage = this.Damage;
+
             bullet.F = (obj) => { 
                 double theta = alpha + RotateSpeed * obj.Delta;
                 Vector2 velo = new Vector2(

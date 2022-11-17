@@ -70,6 +70,7 @@ ForwardTime = 100.0
 Theta = 0.0
 XForwardSpeed = -25.0
 YForwardSpeed = 100.0
+YDistance = 0.0
 
 [node name="FireFairy-03-00" parent="SpawnerManager" instance=ExtResource( 5 )]
 position = Vector2( 900, 0 )
@@ -78,6 +79,9 @@ SpawnRate = 1.0
 
 [node name="IceFairy-03-01" parent="SpawnerManager" instance=ExtResource( 6 )]
 position = Vector2( 800, 600 )
+EnemyCount = 4
+SpawnRate = 1.0
+WaitTime = 3.0
 YDirection = -1
 
 [node name="ClownpieceSupportSpawner-00" parent="SpawnerManager" instance=ExtResource( 4 )]
