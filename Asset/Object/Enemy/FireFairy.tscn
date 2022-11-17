@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Script/Enemy/FireFairy.cs" type="Script" id=1]
+[ext_resource path="res://Sprite/Object/Enemy/FireFairy.png" type="Texture" id=2]
+[ext_resource path="res://Script/Gun/Enemy/IceFairyGun.cs" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 11.5, 23 )
+
+[node name="FireFairyBody" type="KinematicBody2D" groups=["Enemy"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 1 )
+Health = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.5, 0 )
+shape = SubResource( 1 )
+
+[node name="FireFairy" type="Sprite" parent="."]
+position = Vector2( 0, 2.38419e-07 )
+rotation = 1.55683
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 32.4041, 17.0125 )
+
+[node name="Gun1" type="Node2D" parent="."]
+script = ExtResource( 3 )
+FireRate = 2.5
+Delta = 2.0
+BulletSprite = "FireFairyBullet"
+
+[node name="Gun2" type="Node2D" parent="."]
+script = ExtResource( 3 )
+FireRate = 2.5
+Delta = 2.1
+BulletSprite = "FireFairyBullet"
+
+[node name="Gun3" type="Node2D" parent="."]
+script = ExtResource( 3 )
+FireRate = 2.5
+Delta = 2.2
+BulletSprite = "FireFairyBullet"
+
+[node name="Gun4" type="Node2D" parent="."]
+script = ExtResource( 3 )
+FireRate = 2.5
+Delta = 2.3
+BulletSprite = "FireFairyBullet"

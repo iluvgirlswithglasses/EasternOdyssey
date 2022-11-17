@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Script/Enemy/IceFairy.cs" type="Script" id=1]
-[ext_resource path="res://icon.svg" type="Texture" id=2]
+[ext_resource path="res://Sprite/Object/Enemy/IceFairy.png" type="Texture" id=2]
 [ext_resource path="res://Script/Gun/Enemy/IceFairyGun.cs" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15, 16 )
+extents = Vector2( 15, 18 )
+
+[sub_resource type="AtlasTexture" id=2]
 
 [node name="IceFairyBody" type="KinematicBody2D" groups=["Enemy"]]
 collision_layer = 0
@@ -16,11 +18,15 @@ Health = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Icon" type="Sprite" parent="CollisionShape2D"]
-position = Vector2( -9.53674e-07, 1.43051e-06 )
-scale = Vector2( 0.234375, 0.25 )
-texture = ExtResource( 2 )
-
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource( 3 )
 FireRate = 0.5
+
+[node name="IceFairy" type="Sprite" parent="."]
+position = Vector2( 7, 0 )
+rotation = 1.55683
+scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 2 )
+normal_map = SubResource( 2 )
+region_enabled = true
+region_rect = Rect2( 3, 2, 26, 30 )

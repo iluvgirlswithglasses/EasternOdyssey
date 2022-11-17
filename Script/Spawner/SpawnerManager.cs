@@ -68,10 +68,10 @@ public class SpawnerManager : Node {
 	}
 
 	/** @ tools */
-	public void AddPhase(List<int> ls) {
+	public void AddPhase(List<string> ls) {
 		List<Spawner> objs = new List<Spawner>();
-		foreach (int i in ls) {
-			Spawner child = GetChild<Spawner>(i);
+		foreach (string i in ls) {
+			Spawner child = GetNode<Spawner>(i);
 			// spawners are disable before their phase begins
 			child.SetProcess(false);
 			objs.Add(child);
