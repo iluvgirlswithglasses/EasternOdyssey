@@ -8,7 +8,9 @@ public class Level1Manager : SpawnerManager {
 	public override void _Ready() {
 		AddPhase(new List<string>(){"IceFairy-00-00", "IceFairy-00-01"});
 		AddPhase(new List<string>(){"FireFairy-01-00", "FireFairy-01-01"});
-		AddPhase(new List<string>(){"ClownpieceSpawner"});
+		AddPhase(new List<string>(){"IceFairy-02-00", "FireFairy-02-01"});
+		AddPhase(new List<string>(){"FireFairy-03-00", "IceFairy-03-01"});
+		AddPhase(new List<string>(){"ClownpieceSpawner", "ClownpieceSupportSpawner-00", "ClownpieceSupportSpawner-01"});
 		base._Ready();
 	}
 

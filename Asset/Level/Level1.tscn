@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Asset/Object/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Asset/Spawner/ClownpieceSpawner.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Script/Spawner/Level1/Level1Manager.cs" type="Script" id=3]
 [ext_resource path="res://Asset/Spawner/ForwardFrontlineSpawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Asset/Spawner/FireFairyFrontlineSpawner.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Asset/Spawner/IceFairyFrontlineSpawner.tscn" type="PackedScene" id=6]
 
 [node name="Node2D" type="Node2D"]
 
@@ -27,7 +29,6 @@ SpawnRate = 1.0
 WaitTime = 4.0
 Health = 5
 GunDelta = 1.0
-ForwardSpeed = -150.0
 YDistance = -75.0
 
 [node name="FireFairy-01-00" parent="SpawnerManager" instance=ExtResource( 4 )]
@@ -36,15 +37,66 @@ EnemyCount = 4
 SpawnRate = 1.0
 WaitTime = 4.0
 EnemyDir = "FireFairy"
-Health = 5
+Health = 10
 
 [node name="FireFairy-01-01" parent="SpawnerManager" instance=ExtResource( 4 )]
 position = Vector2( 1024, 480 )
 EnemyCount = 4
 SpawnRate = 1.0
 EnemyDir = "FireFairy"
-Health = 5
+Health = 10
 YDistance = -75.0
+
+[node name="IceFairy-02-00" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 900, 600 )
+EnemyCount = 5
+SpawnRate = 1.0
+Health = 5
+FireRate = 1.0
+ForwardTime = 100.0
+Theta = 0.0
+XForwardSpeed = -25.0
+YForwardSpeed = -100.0
+
+[node name="FireFairy-02-01" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 900, 0 )
+EnemyCount = 5
+SpawnRate = 1.0
+WaitTime = 3.0
+EnemyDir = "FireFairy"
+Health = 5
+FireRate = 1.0
+ForwardTime = 100.0
+Theta = 0.0
+XForwardSpeed = -25.0
+YForwardSpeed = 100.0
+
+[node name="FireFairy-03-00" parent="SpawnerManager" instance=ExtResource( 5 )]
+position = Vector2( 900, 0 )
+EnemyCount = 4
+SpawnRate = 1.0
+
+[node name="IceFairy-03-01" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 800, 600 )
+YDirection = -1
+
+[node name="ClownpieceSupportSpawner-00" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 1024, 120 )
+EnemyCount = 2
+SpawnRate = 2.0
+WaitTime = 10.0
+Health = 4
+FireRate = 1.0
+YDistance = 50.0
+
+[node name="ClownpieceSupportSpawner-01" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 1024, 480 )
+EnemyCount = 2
+SpawnRate = 2.0
+WaitTime = 14.0
+Health = 4
+FireRate = 1.0
+YDistance = -50.0
 
 [node name="ClownpieceSpawner" parent="SpawnerManager" instance=ExtResource( 2 )]
 position = Vector2( 1180, 300 )
