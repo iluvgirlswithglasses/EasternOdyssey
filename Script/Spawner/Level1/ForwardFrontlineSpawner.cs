@@ -10,9 +10,13 @@ public partial class ForwardFrontlineSpawner : Spawner {
     [Export] public float GunDelta = 0f;
 
 	[Export] public float ForwardTime = 2;
+
 	[Export] public float Theta = 1f;
 	[Export] public float XForwardSpeed = -200f;
-	[Export] public float YForwardSpeed = 0;
+	[Export] public float YForwardSpeed = 0f;
+	[Export] public float XAcceleration = 0f;
+	[Export] public float YAcceleration = 0f;
+
     [Export] public float YDistance = 75f;   // y distance between each enemy in this frontline
     [Export] public float TDistance = 0f;    // time distance ----
 
@@ -34,8 +38,8 @@ public partial class ForwardFrontlineSpawner : Spawner {
 				// the speed of this object is changed by a Cos() function
 				float a = (float) Cos(Theta * (d / localForwardTime) * PI / 2);
 				return new Vector2(
-					a * XForwardSpeed,
-					a * YForwardSpeed
+					a * XForwardSpeed + d * XAcceleration,
+					a * YForwardSpeed + d * YAcceleration
 				);
 			}
 			// stop after forward time

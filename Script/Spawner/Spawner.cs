@@ -6,14 +6,14 @@ public class Spawner : Node2D {
     public SpawnerManager Manager;
 
     [Export]
-    public uint EnemyCount { get; set; }
+    public uint EnemyCount;
     [Export]
-    public float SpawnRate { get; set; }
+    public float SpawnRate;
 
     // Waited time from spawn to action
     [Export]
-    public float WaitTime { get; set; }
-    protected bool Started { get; set; }
+    public float WaitTime;
+    protected bool Started;
 
     private float Delta;
 
@@ -21,8 +21,10 @@ public class Spawner : Node2D {
     public override void _Ready() {
         Scene = GetTree().Root.GetChild(0);
         Manager = GetParent<SpawnerManager>();
-        if (WaitTime == 0)
-            Started = true;
+
+
+        WaitTime += Constants.PHASE_TRANSITION_TIME;
+        Started = false;
     }
 
     // Called every frame. 'delta' is the elapsed time since the previous frame.

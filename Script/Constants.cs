@@ -15,4 +15,7 @@ static public class Constants {
 	static public uint NO_LAYER = 0;
 	static public uint PLAYER_LAYER = 1;
 	static public uint ENEMY_LAYER = 2;
+
+	// default time gap between phases
+	static public float PHASE_TRANSITION_TIME = 1;
 }

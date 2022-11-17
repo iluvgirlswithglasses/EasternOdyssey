@@ -10,6 +10,8 @@ public class Level1Manager : SpawnerManager {
 		AddPhase(new List<string>(){"FireFairy-01-00", "FireFairy-01-01"});
 		AddPhase(new List<string>(){"IceFairy-02-00", "FireFairy-02-01"});
 		AddPhase(new List<string>(){"FireFairy-03-00", "IceFairy-03-01"});
+		AddPhase(new List<string>(){"IceFairy-04-00"});
+		AddPhase(new List<string>(){"IceFairy-05-00", "WindFairy-05-01"});
 		AddPhase(new List<string>(){"ClownpieceSpawner", "ClownpieceSupportSpawner-00", "ClownpieceSupportSpawner-01"});
 		base._Ready();
 	}
