@@ -35,7 +35,7 @@ public class Bullet : KinematicBody2D {
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta) {
 		Velocity = new Vector2(
-			Velocity.x + (float) Math.Cos(Angle) *delta * Acceleration, 
+			Velocity.x + (float) Math.Cos(Angle) * delta * Acceleration, 
 			Velocity.y + (float) Math.Sin(Angle) * delta * Acceleration
 		);
 		Move(Velocity);
