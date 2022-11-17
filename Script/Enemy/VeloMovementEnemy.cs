@@ -35,8 +35,12 @@ public class VeloMovementEnemy : Actor {
 		Manager.CountKill();
 	}
 
+	public virtual void ChangeFireRate(float fr) {
+
+	}
+
 	public virtual void ProcessOutOfScreen() {
-		if (ScreenTool.IsOutOfScreen(GetViewportRect().Size, Position)) {
+		if (ScreenTool.IsOutOfScreenByMargin(GetViewportRect().Size, Position, 100)) {
 			GetParent().RemoveChild(this);
 			Manager.CountLoss();
 		}

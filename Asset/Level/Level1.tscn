@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Asset/Object/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Asset/Spawner/ClownpieceSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Script/Spawner/Level1/Level1Manager.cs" type="Script" id=3]
+[ext_resource path="res://Asset/Spawner/ForwardFrontlineSpawner.tscn" type="PackedScene" id=4]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 175, 300 )
+
+[node name="SpawnerManager" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="FireFairy-00-00" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 1024, 150 )
+EnemyCount = 4
+SpawnRate = 1.0
+Health = 5
+
+[node name="FireFairy-00-01" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 1024, 450 )
+EnemyCount = 4
+SpawnRate = 1.0
+WaitTime = 4.0
+Health = 5
+ForwardSpeed = -150.0
+YDistance = -75.0
+
+[node name="ClownpieceSpawner" parent="SpawnerManager" instance=ExtResource( 2 )]
+position = Vector2( 1180, 300 )
+EnemyCount = 1
