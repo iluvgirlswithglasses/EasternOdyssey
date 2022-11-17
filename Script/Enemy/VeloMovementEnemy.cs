@@ -39,6 +39,10 @@ public class VeloMovementEnemy : Actor {
 
 	}
 
+	public virtual void ChangeGunDelta(float d) {
+		
+	}
+
 	public virtual void ProcessOutOfScreen() {
 		if (ScreenTool.IsOutOfScreenByMargin(GetViewportRect().Size, Position, 100)) {
 			GetParent().RemoveChild(this);

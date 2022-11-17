@@ -4,20 +4,15 @@ using static System.Math;
 public partial class ForwardFrontlineSpawner : Spawner {
 	private PackedScene enemyScene;
 
-	[Export]
-	public string EnemyDir = "IceFairy";
-	[Export]
-	public int Health;
-    [Export]
-    public float FireRate = 1.25f;
-	[Export]
-	public float ForwardTime = 2;
-	[Export]
-	public float ForwardSpeed = -200f;
-    [Export]
-    public float YDistance = 75f;   // y distance between each enemy in this frontline
-    [Export]
-    public float TDistance = 0f;    // time distance ----
+	[Export] public string EnemyDir = "IceFairy";
+	[Export] public int Health;
+    [Export] public float FireRate = 1.25f;
+    [Export] public float GunDelta = 0f;
+
+	[Export] public float ForwardTime = 2;
+	[Export] public float ForwardSpeed = -200f;
+    [Export] public float YDistance = 75f;   // y distance between each enemy in this frontline
+    [Export] public float TDistance = 0f;    // time distance ----
 
     protected int SpawnCount = 0;
 
@@ -30,7 +25,6 @@ public partial class ForwardFrontlineSpawner : Spawner {
 		VeloMovementEnemy enemy = (VeloMovementEnemy) enemyScene.Instance();
 		enemy.Health = Health;
 		enemy.Manager = Manager;
-        enemy.ChangeFireRate(FireRate);
 
 		enemy.f = (d) => {
             float localForwardTime = ForwardTime + TDistance * SpawnCount;
@@ -49,6 +43,10 @@ public partial class ForwardFrontlineSpawner : Spawner {
             GlobalPosition.x, 
             GlobalPosition.y + SpawnCount*YDistance
         );
+
+        // these are only called when Gun Node is loaded
+        enemy.ChangeFireRate(FireRate);
+        enemy.ChangeGunDelta(GunDelta);
 
         SpawnCount++;
 	}

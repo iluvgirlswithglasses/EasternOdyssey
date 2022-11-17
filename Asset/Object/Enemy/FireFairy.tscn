@@ -25,25 +25,27 @@ texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 32.4041, 17.0125 )
 
-[node name="Gun1" type="Node2D" parent="."]
+[node name="Guns" type="Node2D" parent="."]
+
+[node name="Gun1" type="Node2D" parent="Guns"]
 script = ExtResource( 3 )
 FireRate = 2.5
 Delta = 2.0
 BulletSprite = "FireFairyBullet"
 
-[node name="Gun2" type="Node2D" parent="."]
+[node name="Gun2" type="Node2D" parent="Guns"]
 script = ExtResource( 3 )
 FireRate = 2.5
 Delta = 2.1
 BulletSprite = "FireFairyBullet"
 
-[node name="Gun3" type="Node2D" parent="."]
+[node name="Gun3" type="Node2D" parent="Guns"]
 script = ExtResource( 3 )
 FireRate = 2.5
 Delta = 2.2
 BulletSprite = "FireFairyBullet"
 
-[node name="Gun4" type="Node2D" parent="."]
+[node name="Gun4" type="Node2D" parent="Guns"]
 script = ExtResource( 3 )
 FireRate = 2.5
 Delta = 2.3

@@ -13,19 +13,37 @@ position = Vector2( 175, 300 )
 [node name="SpawnerManager" type="Node2D" parent="."]
 script = ExtResource( 3 )
 
-[node name="FireFairy-00-00" parent="SpawnerManager" instance=ExtResource( 4 )]
+[node name="IceFairy-00-00" parent="SpawnerManager" instance=ExtResource( 4 )]
 position = Vector2( 1024, 150 )
 EnemyCount = 4
 SpawnRate = 1.0
 Health = 5
+GunDelta = 1.0
 
-[node name="FireFairy-00-01" parent="SpawnerManager" instance=ExtResource( 4 )]
+[node name="IceFairy-00-01" parent="SpawnerManager" instance=ExtResource( 4 )]
 position = Vector2( 1024, 450 )
 EnemyCount = 4
 SpawnRate = 1.0
 WaitTime = 4.0
 Health = 5
+GunDelta = 1.0
 ForwardSpeed = -150.0
+YDistance = -75.0
+
+[node name="FireFairy-01-00" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 1024, 120 )
+EnemyCount = 4
+SpawnRate = 1.0
+WaitTime = 4.0
+EnemyDir = "FireFairy"
+Health = 5
+
+[node name="FireFairy-01-01" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 1024, 480 )
+EnemyCount = 4
+SpawnRate = 1.0
+EnemyDir = "FireFairy"
+Health = 5
 YDistance = -75.0
 
 [node name="ClownpieceSpawner" parent="SpawnerManager" instance=ExtResource( 2 )]
