@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Eastern Odyssey"
-run/main_scene="res://Asset/Level/Stage1.tscn"
+run/main_scene="res://Asset/Level/SandboxStage.tscn"
 
 [display]
 

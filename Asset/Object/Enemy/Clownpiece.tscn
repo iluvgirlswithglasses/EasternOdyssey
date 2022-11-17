@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Sprite/Object/Enemy/Clownpiece.png" type="Texture" id=1]
 [ext_resource path="res://Script/Enemy/Clownpiece.cs" type="Script" id=2]
 [ext_resource path="res://Script/Gun/Enemy/Clownpiece/ClownpieceSpiralGun.cs" type="Script" id=3]
+[ext_resource path="res://Script/Gun/Enemy/IceFairyGun.cs" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 165, 68 )
@@ -44,3 +45,16 @@ FireRate = 6.0
 Delta = 0.5
 RotateSpeed = -1.0
 BulletSprite = "ClownpieceSpiralBulletBlue"
+
+[node name="PistolGun1" type="Node2D" parent="."]
+position = Vector2( -155, 0 )
+script = ExtResource( 4 )
+FireRate = 2.0
+SPEED = 400.0
+
+[node name="PistolGun2" type="Node2D" parent="."]
+position = Vector2( -155, 0 )
+script = ExtResource( 4 )
+FireRate = 2.0
+Delta = 0.2
+SPEED = 400.0

@@ -27,14 +27,18 @@ public class VeloMovementEnemy : Actor {
 		Velocity = f(Delta);
 		MoveAndSlide(Velocity);
 		// if out of scene
-		if (ScreenTool.IsOutOfScreen(GetViewportRect().Size, Position)) {
-			GetParent().RemoveChild(this);
-			Manager.CountLoss();
-		}
+		ProcessOutOfScreen();
 	}
 
 	public override void AnnounceKill() {
 		base.AnnounceKill();
 		Manager.CountKill();
+	}
+
+	public virtual void ProcessOutOfScreen() {
+		if (ScreenTool.IsOutOfScreen(GetViewportRect().Size, Position)) {
+			GetParent().RemoveChild(this);
+			Manager.CountLoss();
+		}
 	}
 }
