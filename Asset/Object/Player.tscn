@@ -20,5 +20,10 @@ shape = SubResource( 1 )
 position = Vector2( 0, -0.5 )
 texture = ExtResource( 1 )
 
-[node name="PistolGunNode" parent="." instance=ExtResource( 3 )]
-position = Vector2( 7, 0 )
+[node name="PistolGun0" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7, 7 )
+DAMAGE = 2
+
+[node name="PistolGun1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 7, -7 )
+DAMAGE = 2

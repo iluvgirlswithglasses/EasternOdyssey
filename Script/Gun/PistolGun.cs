@@ -4,8 +4,8 @@ public partial class PistolGun : Gun {
 
 	private PackedScene bulletScene = (PackedScene) GD.Load("res://Asset/Object/Bullet/Player/Pistol.tscn");
 
-	const int DAMAGE = 4;
-	const float SPEED = 2000.0f;
+	[Export] public int DAMAGE = 4;
+	[Export] public float SPEED = 2000.0f;
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
