@@ -11,11 +11,14 @@ static public class Constants {
 
 	Why? Because Godot's collision sucks. That's why.
 	*/
+
 	// these are BIT MASKS
 	static public uint NO_LAYER = 0;
 	static public uint PLAYER_LAYER = 1;
 	static public uint ENEMY_LAYER = 2;
 
 	// default time gap between phases
-	static public float PHASE_TRANSITION_TIME = 0.5f;
+	// statistics will be shown during this time
+	// mininum value: 0.5f 
+	static public float PHASE_TRANSITION_TIME = 3.5f;
 }

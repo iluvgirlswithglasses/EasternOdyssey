@@ -9,22 +9,36 @@ public class SpawnerManager : Node {
 
 	public int CurrentPhase;
 	
-	public int StageKillCount { get; set; }
-	public int StageEnemyCount { get; set; }
+	// statistics of THE WHOLE STAGE
+	public int StageKillCount;
+	public int StageEnemyCount;
+	public int StagePoint;
 
-	public int PhaseLossCount { get; set; }
-	public int PhaseEnemyCount { get; set; }
+	// statistics of CURRENT PHASE ONLY
+	public int PhaseEnemyCount;
+	public int PhaseLossCount;
+	public int PhaseKillCount;
+	public int PhasePoint;
+	public int PhaseEnterHealth;	// the health of the player before the phase starts
+
+	private Actor Player;
+	private StatDisplayer Stat;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		CurrentPhase = -1;
+		Player = (Actor) GetParent().GetNode("Player");
+		Stat = (StatDisplayer) GetParent().GetNode("StatDisplayer");
 		NextPhase();
 	}
 
 	/** @ basic */
 	// player's kill count
-	public void CountKill() {
+	public void CountKill(int pts) {
+		PhaseKillCount++;
 		StageKillCount++;
+		PhasePoint += pts;
+		StagePoint += pts;
 		CountLoss();
 	}
 
@@ -33,8 +47,26 @@ public class SpawnerManager : Node {
 		PhaseLossCount++;
 		GD.Print(String.Format("Loss={0}", PhaseLossCount));
 		if (PhaseLossCount == PhaseEnemyCount) {
-			PhaseLossCount = 0;
-			PhaseEnemyCount = 0;
+			// gather stats
+			float percentage = (float) PhaseKillCount / PhaseEnemyCount * 100f;
+			int bonusPoint = 0;
+			if (Player.Health == PhaseEnterHealth) {
+				bonusPoint = PhasePoint;
+			}
+			StagePoint += PhasePoint + bonusPoint;
+
+			// announce stats
+			Stat.Annoucement.Text = string.Format("Phase {0} Completed !", CurrentPhase + 1);
+			Stat.EnemyCount.Text = PhaseEnemyCount.ToString();
+			Stat.KillCount.Text = PhaseKillCount.ToString();
+			Stat.KillPercentage.Text = string.Format("{0}%", percentage.ToString("0.00"));
+			Stat.HitlessBonus.Text = bonusPoint.ToString();
+			Stat.GainedPoint.Text = string.Format("{0}", PhasePoint + bonusPoint);
+			Stat.TotalPoint.Text = StagePoint.ToString();
+
+			Stat.Display();
+
+			// reset & move to next phase
 			NextPhase();
 		}
 	}
@@ -50,11 +82,19 @@ public class SpawnerManager : Node {
 
 	// go to next phase
 	public virtual void NextPhase() {
+		// statistics
+		PhaseEnemyCount = 0;
+		PhaseLossCount = 0;
+		PhaseKillCount = 0;
+		PhasePoint = 0;
+		PhaseEnterHealth = Player.Health;
+		//
 		CurrentPhase++;
 		if (CurrentPhase == Stage.Count) {
 			StageComplete();
 			return;
 		}
+		// spawner
 		PhaseEnemyCount = CountEnemyInPhase(CurrentPhase);
 		GD.Print(String.Format("Phase = {0}; Count = {1}", CurrentPhase, PhaseEnemyCount));
 		// enable spawners in this phase

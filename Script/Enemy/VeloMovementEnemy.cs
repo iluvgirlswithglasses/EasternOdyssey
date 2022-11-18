@@ -4,6 +4,10 @@ using Godot;
 public class VeloMovementEnemy : Actor {
 
 	protected float Delta = 0;
+
+	[Export]
+	public int Point = 10;	// the point gained for killing this enemy
+
 	// THIS FIELD MUST BE SET BY THE SPAWNER
 	// OTHERWISE THE GAME WILL CRASH
 	public SpawnerManager Manager;
@@ -32,7 +36,7 @@ public class VeloMovementEnemy : Actor {
 
 	public override void AnnounceKill() {
 		base.AnnounceKill();
-		Manager.CountKill();
+		Manager.CountKill(Point);
 	}
 
 	public virtual void ChangeFireRate(float fr) {

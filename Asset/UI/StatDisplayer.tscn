@@ -1,0 +1,125 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Font/BRLNSR.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://Script/UI/StatDisplayer.cs" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+font_data = ExtResource( 1 )
+
+[node name="StatDisplayer" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 87, 223 )
+script = ExtResource( 2 )
+
+[node name="Container" type="VBoxContainer" parent="."]
+margin_left = 312.0
+margin_top = 31.0
+margin_right = 712.0
+margin_bottom = 573.0
+
+[node name="Annoucement" type="Label" parent="Container"]
+margin_right = 400.0
+margin_bottom = 56.0
+custom_fonts/font = SubResource( 1 )
+text = "Phase 1 Cleared !"
+align = 1
+
+[node name="_Label_EnemyCount" type="Label" parent="Container"]
+margin_top = 60.0
+margin_right = 400.0
+margin_bottom = 127.0
+custom_fonts/font = SubResource( 2 )
+text = "
+Enemy Count:"
+
+[node name="EnemyCount" type="Label" parent="Container"]
+margin_top = 131.0
+margin_right = 400.0
+margin_bottom = 163.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
+
+[node name="_Label_KillCount" type="Label" parent="Container"]
+margin_top = 167.0
+margin_right = 400.0
+margin_bottom = 199.0
+custom_fonts/font = SubResource( 2 )
+text = "Kill Count:"
+
+[node name="KillCount" type="Label" parent="Container"]
+margin_top = 203.0
+margin_right = 400.0
+margin_bottom = 235.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
+
+[node name="_Label_KillPercentage" type="Label" parent="Container"]
+margin_top = 239.0
+margin_right = 400.0
+margin_bottom = 271.0
+custom_fonts/font = SubResource( 2 )
+text = "Kill Percentage:"
+
+[node name="KillPercentage" type="Label" parent="Container"]
+margin_top = 275.0
+margin_right = 400.0
+margin_bottom = 307.0
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
+
+[node name="_Label_HitlessBonus" type="Label" parent="Container"]
+margin_top = 311.0
+margin_right = 400.0
+margin_bottom = 343.0
+custom_fonts/font = SubResource( 2 )
+text = "HITLESS Bonus:"
+
+[node name="HitlessBonus" type="Label" parent="Container"]
+margin_top = 347.0
+margin_right = 400.0
+margin_bottom = 379.0
+custom_colors/font_color = Color( 1, 0.560784, 0, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
+
+[node name="_Label_GainedPoint" type="Label" parent="Container"]
+margin_top = 383.0
+margin_right = 400.0
+margin_bottom = 415.0
+custom_fonts/font = SubResource( 2 )
+text = "Gained Points:"
+
+[node name="GainedPoint" type="Label" parent="Container"]
+margin_top = 419.0
+margin_right = 400.0
+margin_bottom = 451.0
+custom_colors/font_color = Color( 1, 0, 0.960784, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
+
+[node name="_Label_TotalPoint" type="Label" parent="Container"]
+margin_top = 455.0
+margin_right = 400.0
+margin_bottom = 487.0
+custom_fonts/font = SubResource( 2 )
+text = "Total Points:"
+
+[node name="TotalPoint" type="Label" parent="Container"]
+margin_top = 491.0
+margin_right = 400.0
+margin_bottom = 523.0
+custom_colors/font_color = Color( 1, 0, 0.960784, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "0"
+align = 2
