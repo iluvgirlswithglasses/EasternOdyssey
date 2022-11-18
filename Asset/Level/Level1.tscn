@@ -29,6 +29,7 @@ SpawnRate = 1.0
 WaitTime = 4.0
 Health = 5
 GunDelta = 1.0
+XForwardSpeed = -300.0
 YDistance = -75.0
 
 [node name="FireFairy-01-00" parent="SpawnerManager" instance=ExtResource( 4 )]
@@ -45,6 +46,7 @@ EnemyCount = 4
 SpawnRate = 1.5
 EnemyDir = "FireFairy"
 Health = 10
+XForwardSpeed = -100.0
 YDistance = -75.0
 
 [node name="IceFairy-02-00" parent="SpawnerManager" instance=ExtResource( 4 )]
@@ -124,6 +126,36 @@ Health = 10
 FireRate = 2.0
 GunDelta = 1.0
 XForwardSpeed = -100.0
+
+[node name="WindFairySA-06-00" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 1024, 575 )
+EnemyCount = 4
+SpawnRate = 1.0
+EnemyDir = "WindFairySingleAction"
+FireRate = 3.0
+GunDelta = 2.0
+RelativeToPlayer = 0
+ForwardTime = 15.0
+XForwardSpeed = -100.0
+YForwardSpeed = -100.0
+XAcceleration = 25.0
+YAcceleration = -10.0
+YDistance = 0.0
+
+[node name="WindFairySA-06-01" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 1024, 15 )
+EnemyCount = 4
+SpawnRate = 1.0
+EnemyDir = "WindFairySingleAction"
+FireRate = 3.0
+GunDelta = 2.0
+RelativeToPlayer = 0
+ForwardTime = 15.0
+XForwardSpeed = -100.0
+YForwardSpeed = 100.0
+XAcceleration = 25.0
+YAcceleration = 10.0
+YDistance = 0.0
 
 [node name="ClownpieceSupportSpawner-00" parent="SpawnerManager" instance=ExtResource( 4 )]
 position = Vector2( 1024, 120 )

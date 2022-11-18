@@ -14,8 +14,12 @@ public partial class IceFairyGun : Gun {
 	[Export]
 	public float ACCELERATION = 0.0f;
 	[Export]
+	public float ALPHA = 0.0f;
+	[Export]
 	public float THETA_DEG = 0.0f;
 	public float THETA;
+	[Export]
+	public int RELATIVE_TO_PLAYER = 1;	// whether or not this gun will target at the player
 	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
@@ -30,7 +34,8 @@ public partial class IceFairyGun : Gun {
 		Bullet bullet = (Bullet) BulletScene.Instance();
 		bullet.Init(
 			DAMAGE, 
-			SPEED, ACCELERATION, THETA + GetAngleTo(Scene.GetNode<Node2D>("Player").Position), 
+			SPEED, ACCELERATION,
+			ALPHA + THETA + RELATIVE_TO_PLAYER * GetAngleTo(Scene.GetNode<Node2D>("Player").Position), 
 			Constants.NO_LAYER, Constants.PLAYER_LAYER, "Player"
 		);
 		// add

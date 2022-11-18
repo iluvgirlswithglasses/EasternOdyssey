@@ -9,6 +9,8 @@ public partial class ForwardFrontlineSpawner : Spawner {
     [Export] public float FireRate = 1.25f;
     [Export] public float GunDelta = 0f;
 
+	[Export] public int RelativeToPlayer = 1;
+
 	[Export] public float ForwardTime = 2;
 
 	[Export] public float Theta = 1f;
@@ -55,6 +57,7 @@ public partial class ForwardFrontlineSpawner : Spawner {
         // these are only called when Gun Node is loaded
         enemy.ChangeFireRate(FireRate);
         enemy.ChangeGunDelta(GunDelta);
+		enemy.ChangeRelativeToPlayer(RelativeToPlayer);
 
         SpawnCount++;
 	}

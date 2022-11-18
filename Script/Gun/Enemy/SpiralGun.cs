@@ -1,4 +1,5 @@
 using Godot;
+using System;
 using static System.Math;
 
 public abstract class SpiralGun : Gun {
@@ -36,18 +37,22 @@ public abstract class SpiralGun : Gun {
             bullet.Target = this.Target;
             bullet.Damage = this.Damage;
 
-            bullet.F = (obj) => { 
-                double theta = alpha + RotateSpeed * obj.Delta;
-                Vector2 velo = new Vector2(
-                    (float) Cos(theta) * (Speed + obj.Delta * Acceleration), 
-                    (float) Sin(theta) * (Speed + obj.Delta * Acceleration)
-                );
-                obj.Rotation = (float) theta;
-                return velo; 
-            };
+            bullet.F = AssignBullet(alpha);
             // launch
             Scene.AddChild(bullet);
             bullet.Position = this.GlobalPosition;
         }
+    }
+
+    protected virtual Func<BulletAdv, Vector2> AssignBullet(double alpha) {
+        return (obj) => { 
+			double theta = alpha + RotateSpeed * obj.Delta;
+			Vector2 velo = new Vector2(
+				(float) Cos(theta) * (Speed + obj.Delta * Acceleration), 
+				(float) Sin(theta) * (Speed + obj.Delta * Acceleration)
+			);
+			obj.Rotation = (float) theta;
+			return velo; 
+		};
     }
 }
