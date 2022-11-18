@@ -54,6 +54,7 @@ RotateSpeed = -1.0
 position = Vector2( -155, -40 )
 script = ExtResource( 4 )
 FireRate = 2.0
+BulletSprite = "ClownpieceForwardBullet"
 SPEED = 400.0
 
 [node name="PistolGun2" type="Node2D" parent="."]
@@ -61,4 +62,5 @@ position = Vector2( -155, 40 )
 script = ExtResource( 4 )
 FireRate = 2.0
 Delta = 0.2
+BulletSprite = "ClownpieceForwardBullet"
 SPEED = 400.0

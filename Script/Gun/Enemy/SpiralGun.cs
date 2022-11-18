@@ -2,7 +2,7 @@ using Godot;
 using System;
 using static System.Math;
 
-public abstract class SpiralGun : Gun {
+public class SpiralGun : Gun {
 
     protected PackedScene BulletScene;
 
@@ -28,10 +28,12 @@ public abstract class SpiralGun : Gun {
     public override void Shoot() {
         double angle = 2 * PI / BulletsPerShot;
         for (int i = 0; i < BulletsPerShot; i++) {
-            // calculations
             double alpha = angle * i;
-            // add rotation here
+            ShootBullet(alpha);
+        }
+    }
 
+    protected virtual void ShootBullet(double alpha) {
             // prepare object
             BulletAdv bullet = (BulletAdv) BulletScene.Instance();
 
@@ -40,14 +42,13 @@ public abstract class SpiralGun : Gun {
             bullet.Target = this.Target;
             bullet.Damage = this.Damage;
 
-            bullet.F = AssignBullet(alpha);
+            bullet.F = GetBulletVector(alpha);
             // launch
             Scene.AddChild(bullet);
             bullet.Position = this.GlobalPosition;
-        }
     }
 
-    protected virtual Func<BulletAdv, Vector2> AssignBullet(double alpha) {
+    protected virtual Func<BulletAdv, Vector2> GetBulletVector(double alpha) {
         return (obj) => { 
 			double theta = alpha + RotateSpeed * obj.Delta;
 			Vector2 velo = new Vector2(
