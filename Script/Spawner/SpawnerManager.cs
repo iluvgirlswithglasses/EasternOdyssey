@@ -53,7 +53,7 @@ public class SpawnerManager : Node {
 			if (Player.Health == PhaseEnterHealth) {
 				bonusPoint = PhasePoint;
 			}
-			StagePoint += PhasePoint + bonusPoint;
+			StagePoint += bonusPoint;
 
 			// announce stats
 			Stat.Annoucement.Text = string.Format("Phase {0} Completed !", CurrentPhase + 1);

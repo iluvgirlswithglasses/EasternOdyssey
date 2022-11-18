@@ -2,12 +2,8 @@ using Godot;
 using System;
 using static System.Math;
 
-public class ClownpieceSpiralGun : SpiralGun {
-	[Export]
-	public string BulletSprite = "ClownpieceSpiralBullet";
-
+public abstract class ClownpieceSpiralGun : SpiralGun {
 	public override void _Ready() {
 		base._Ready();
-		BulletScene = (PackedScene) GD.Load(String.Format("res://Asset/Object/Bullet/Enemy/{0}.tscn", BulletSprite));
 	}
 }

@@ -7,6 +7,8 @@ public abstract class SpiralGun : Gun {
     protected PackedScene BulletScene;
 
     [Export]
+    public string BulletSprite;
+    [Export]
     public int Damage = 10;
     [Export]
     public float Speed = 20.0f;
@@ -20,6 +22,7 @@ public abstract class SpiralGun : Gun {
     public override void _Ready() {
         base._Ready();
         this.Target = "Player";
+        BulletScene = (PackedScene) GD.Load(String.Format("res://Asset/Object/Bullet/Enemy/{0}.tscn", BulletSprite));
     }
 
     public override void Shoot() {

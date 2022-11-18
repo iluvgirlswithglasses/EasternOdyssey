@@ -13,6 +13,7 @@ collision_layer = 0
 collision_mask = 2
 script = ExtResource( 2 )
 Health = 350
+Point = 500
 Speed = 100
 FurryThreshold = 350
 
@@ -28,6 +29,7 @@ position = Vector2( -155, 0 )
 script = ExtResource( 3 )
 FireRate = 2.5
 Delta = 2.0
+BulletSprite = "ClownpieceSpiralBullet"
 RotateSpeed = 0.6
 
 [node name="SpiralGun1B" type="Node2D" parent="."]
@@ -35,6 +37,7 @@ position = Vector2( -155, 0 )
 script = ExtResource( 3 )
 FireRate = 2.5
 Delta = 1.8
+BulletSprite = "ClownpieceSpiralBullet"
 Acceleration = 150.0
 RotateSpeed = 0.6
 BulletsPerShot = 15
@@ -44,8 +47,8 @@ position = Vector2( -155, 0 )
 script = ExtResource( 3 )
 FireRate = 6.0
 Delta = 0.5
-RotateSpeed = -1.0
 BulletSprite = "ClownpieceSpiralBulletBlue"
+RotateSpeed = -1.0
 
 [node name="PistolGun1" type="Node2D" parent="."]
 position = Vector2( -155, -40 )
