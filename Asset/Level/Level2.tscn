@@ -238,9 +238,8 @@ margin_bottom = 215.0
 script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="CenterContainer"]
-margin_left = 16.0
-margin_right = 589.0
-margin_bottom = 115.0
+margin_right = 750.0
+margin_bottom = 119.0
 custom_fonts/font = SubResource( 1 )
 text = "Stage 1:
 Legacy of Lunatic Kingdom"

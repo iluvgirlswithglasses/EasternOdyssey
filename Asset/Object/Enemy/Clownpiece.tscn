@@ -6,7 +6,7 @@
 [ext_resource path="res://Script/Gun/Enemy/IceFairyGun.cs" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 165, 68 )
+extents = Vector2( 116, 68 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" groups=["Enemy"]]
 collision_layer = 0
@@ -21,11 +21,11 @@ FurryThreshold = 350
 shape = SubResource( 1 )
 
 [node name="Clownpiece" type="Sprite" parent="."]
-scale = Vector2( 4, 4 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 1 )
 
 [node name="SpiralGun1A" type="Node2D" parent="."]
-position = Vector2( -155, 0 )
+position = Vector2( -110, 0 )
 script = ExtResource( 3 )
 FireRate = 2.5
 Delta = 2.0
@@ -33,7 +33,7 @@ BulletSprite = "ClownpieceSpiralBullet"
 RotateSpeed = 0.6
 
 [node name="SpiralGun1B" type="Node2D" parent="."]
-position = Vector2( -155, 0 )
+position = Vector2( -110, 0 )
 script = ExtResource( 3 )
 FireRate = 2.5
 Delta = 1.8
@@ -43,7 +43,7 @@ RotateSpeed = 0.6
 BulletsPerShot = 15
 
 [node name="SpiralGun2A" type="Node2D" parent="."]
-position = Vector2( -155, 0 )
+position = Vector2( -110, 0 )
 script = ExtResource( 3 )
 FireRate = 6.0
 Delta = 0.5
@@ -51,14 +51,14 @@ BulletSprite = "ClownpieceSpiralBulletBlue"
 RotateSpeed = -1.0
 
 [node name="PistolGun1" type="Node2D" parent="."]
-position = Vector2( -155, -40 )
+position = Vector2( -110, -40 )
 script = ExtResource( 4 )
 FireRate = 2.0
 BulletSprite = "ClownpieceForwardBullet"
 SPEED = 400.0
 
 [node name="PistolGun2" type="Node2D" parent="."]
-position = Vector2( -155, 40 )
+position = Vector2( -110, 40 )
 script = ExtResource( 4 )
 FireRate = 2.0
 Delta = 0.2
