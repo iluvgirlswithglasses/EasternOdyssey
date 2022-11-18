@@ -60,8 +60,8 @@ public class SpawnerManager : Node {
 			Stat.EnemyCount.Text = PhaseEnemyCount.ToString();
 			Stat.KillCount.Text = PhaseKillCount.ToString();
 			Stat.KillPercentage.Text = string.Format("{0}%", percentage.ToString("0.00"));
+			Stat.GainedPoint.Text = PhasePoint.ToString();
 			Stat.HitlessBonus.Text = bonusPoint.ToString();
-			Stat.GainedPoint.Text = string.Format("{0}", PhasePoint + bonusPoint);
 			Stat.TotalPoint.Text = StagePoint.ToString();
 
 			Stat.Display();

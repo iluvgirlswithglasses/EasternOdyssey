@@ -76,34 +76,34 @@ custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 
-[node name="_Label_HitlessBonus" type="Label" parent="Container"]
+[node name="_Label_GainedPoint" type="Label" parent="Container"]
 margin_top = 311.0
 margin_right = 400.0
 margin_bottom = 343.0
 custom_fonts/font = SubResource( 2 )
-text = "HITLESS Bonus:"
+text = "Gained Points:"
 
-[node name="HitlessBonus" type="Label" parent="Container"]
+[node name="GainedPoint" type="Label" parent="Container"]
 margin_top = 347.0
 margin_right = 400.0
 margin_bottom = 379.0
-custom_colors/font_color = Color( 1, 0.560784, 0, 1 )
+custom_colors/font_color = Color( 1, 0, 0.960784, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 
-[node name="_Label_GainedPoint" type="Label" parent="Container"]
+[node name="_Label_HitlessBonus" type="Label" parent="Container"]
 margin_top = 383.0
 margin_right = 400.0
 margin_bottom = 415.0
 custom_fonts/font = SubResource( 2 )
-text = "Gained Points:"
+text = "HITLESS Bonus:"
 
-[node name="GainedPoint" type="Label" parent="Container"]
+[node name="HitlessBonus" type="Label" parent="Container"]
 margin_top = 419.0
 margin_right = 400.0
 margin_bottom = 451.0
-custom_colors/font_color = Color( 1, 0, 0.960784, 1 )
+custom_colors/font_color = Color( 1, 0.560784, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
@@ -119,7 +119,7 @@ text = "Total Points:"
 margin_top = 491.0
 margin_right = 400.0
 margin_bottom = 523.0
-custom_colors/font_color = Color( 1, 0, 0.960784, 1 )
+custom_colors/font_color = Color( 1, 0.560784, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2

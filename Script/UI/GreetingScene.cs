@@ -1,15 +1,6 @@
 using Godot;
-using System;
 
-public class StatDisplayer : Control {
-
-	public Label Annoucement;
-	public Label EnemyCount;
-	public Label KillCount;
-	public Label KillPercentage;
-	public Label HitlessBonus;
-	public Label GainedPoint;
-	public Label TotalPoint;
+public partial class GreetingScene : Control {
 
 	private float MaxTimeShown = Constants.PHASE_TRANSITION_TIME - 0.5f;
 	private float AnimationDuration;
@@ -20,13 +11,6 @@ public class StatDisplayer : Control {
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
-		Annoucement = (Label) GetNode("Container/Annoucement");
-		EnemyCount = (Label) GetNode("Container/EnemyCount");
-		KillCount = (Label) GetNode("Container/KillCount");
-		KillPercentage = (Label) GetNode("Container/KillPercentage");
-		GainedPoint = (Label) GetNode("Container/GainedPoint");
-		HitlessBonus = (Label) GetNode("Container/HitlessBonus");
-		TotalPoint = (Label) GetNode("Container/TotalPoint");
 
 		AnimationDuration = MaxTimeShown / 3;
 
