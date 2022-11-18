@@ -11,6 +11,10 @@ public class DeltaTimeSpiralGun : GunAdv {
 	public float BulletDelta;   // delta time between each bullet
 	[Export]
 	public float AngleDiff;     // angle distance between two consecutive bullets
+	[Export]
+	public bool FixedLocation;	// if all the bullets should be shot at one single location
+	[Export]
+	public float InitTravel;	// how far from the center are the bullets before they are launched
 
 	[Export]
 	public float FirstBulletAlpha = 0f;     // first bullet's orient
@@ -19,6 +23,7 @@ public class DeltaTimeSpiralGun : GunAdv {
 	protected bool OpeningFire = false;
 	protected float FiredTime = 0f;
 	protected int FiredBullet = 0;      // bullets fired int this shot
+	protected Vector2 FiredLoc;
 
 	public override void _Ready() {
 		base._Ready();
@@ -26,7 +31,7 @@ public class DeltaTimeSpiralGun : GunAdv {
 		BulletScene = (PackedScene) GD.Load(
 			String.Format("res://Asset/Object/Bullet/Enemy/{0}.tscn", BulletSprite)
 		);
-        AngleDiff = AngleDiff / 180 * (float) PI;
+		AngleDiff = AngleDiff / 180 * (float) PI;
 	}
 
 	public override void _Process(float d) {
@@ -50,6 +55,7 @@ public class DeltaTimeSpiralGun : GunAdv {
 				OpeningFire = true;
 				FiredTime = 0;
 				FiredBullet = 0;
+				FiredLoc = this.GlobalPosition;
 			}
 		}
 	}
@@ -58,6 +64,16 @@ public class DeltaTimeSpiralGun : GunAdv {
 		// prepare object
 		BulletAdv bullet = (BulletAdv) BulletScene.Instance();
 		bullet.F = GetBulletVector(alpha);
-		AddBulletToWorld(bullet);
+
+		bullet.Layers = Constants.NO_LAYER;
+		bullet.CollisionLayer = Constants.PLAYER_LAYER;
+		bullet.Target = this.Target;
+		bullet.Damage = this.Damage;
+
+		Scene.AddChild(bullet);
+		if (FixedLocation)
+			bullet.Position = FiredLoc;
+		else
+			bullet.Position = this.GlobalPosition;
 	}
 }

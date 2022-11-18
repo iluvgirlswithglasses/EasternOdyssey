@@ -21,7 +21,7 @@ position = Vector2( 175, 300 )
 script = ExtResource( 3 )
 
 [node name="MoonRabitSpawner" type="Node2D" parent="SpawnerManager"]
-position = Vector2( 1100, 300 )
+position = Vector2( 1180, 300 )
 script = ExtResource( 2 )
 
 [node name="StatDisplayer" parent="." instance=ExtResource( 7 )]

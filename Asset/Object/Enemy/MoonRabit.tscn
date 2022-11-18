@@ -13,7 +13,7 @@ collision_mask = 2
 script = ExtResource( 1 )
 Health = 450
 Point = 500
-Speed = 100
+Speed = 75
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -50, -1.66667, -45.3333, -8.33333, -36.3333, -8.66667, -24.6667, -20, 5.33333, -20, 10.3333, -18, 16.6667, -21, 28, -24, 29.3333, -21.6667, 19.6667, -17.3333, 45, -16.3333, 47.6667, -12.6667, 46, 17, 26, 18, 19, 23.3333, 2, 23.6667, -2.66667, 19, -18.6667, 19.6667, -28, 15.3333, -45.6667, 15, -50, 8.66667 )
@@ -33,7 +33,7 @@ Delta = 2.0
 BulletSprite = "MoonRabitShotgunBullet"
 RotateSpeed = 0.0
 BulletsPerShot = 10
-BulletSpanDeg = 120.0
+BulletSpanDeg = 150.0
 
 [node name="Shotgun1B" type="Node2D" parent="GunsPhase1"]
 position = Vector2( -50, 0 )
@@ -43,8 +43,8 @@ Delta = 2.1
 BulletSprite = "MoonRabitShotgunBullet"
 RotateSpeed = 0.0
 BulletsPerShot = 10
-DegDirection = -174.0
-BulletSpanDeg = 120.0
+DegDirection = -172.5
+BulletSpanDeg = 150.0
 
 [node name="ForwardGun1" type="Node2D" parent="GunsPhase1"]
 position = Vector2( -50, 0 )
@@ -65,13 +65,32 @@ SPEED = 20.0
 ACCELERATION = 200.0
 THETA_DEG = 2.0
 
-[node name="TestGun" type="Node2D" parent="."]
+[node name="DeltaSpiralGunBlue" type="Node2D" parent="GunsPhase1"]
+position = Vector2( -20, 0 )
 script = ExtResource( 5 )
-FireRate = 100.0
-Delta = 75.0
+FireRate = 24.0
+Delta = 19.0
+BulletSprite = "ClownpieceSpiralBulletBlue"
+Speed = 60.0
+Acceleration = 0.0
+RotateSpeed = 0.1
+BulletsPerShot = 108
+BulletDelta = 0.02
+AngleDiff = 10.0
+FixedLocation = true
+FirstBulletAlpha = 180.0
+
+[node name="DeltaSpiralGunRed" type="Node2D" parent="GunsPhase1"]
+position = Vector2( -20, 0 )
+script = ExtResource( 5 )
+FireRate = 24.0
+Delta = 7.0
 BulletSprite = "ClownpieceSpiralBullet"
-RotateSpeed = 0.25
-BulletsPerShot = 200
-BulletDelta = 0.05
-AngleDiff = 2.0
+Speed = 60.0
+Acceleration = 0.0
+RotateSpeed = 0.1
+BulletsPerShot = 108
+BulletDelta = 0.02
+AngleDiff = 10.0
+FixedLocation = true
 FirstBulletAlpha = 180.0
