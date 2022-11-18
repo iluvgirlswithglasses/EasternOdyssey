@@ -60,7 +60,7 @@ public class DeltaTimeSpiralGun : GunAdv {
 		}
 	}
 
-	protected virtual void ShootBullet(double alpha) {
+	protected override void ShootBullet(double alpha) {
 		// prepare object
 		BulletAdv bullet = (BulletAdv) BulletScene.Instance();
 		bullet.F = GetBulletVector(alpha);
