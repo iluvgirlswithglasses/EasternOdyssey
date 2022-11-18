@@ -66,3 +66,5 @@ custom_fonts/font = SubResource( 2 )
 text = "
 Fall seven times, stand up eight"
 align = 1
+
+[connection signal="button_down" from="VBoxContainer/Retry" to="." method="_on_Retry_button_down"]

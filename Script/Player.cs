@@ -4,8 +4,10 @@ using System;
 public class Player : Actor {
 
 	public const float Speed = 20000.0f;
+	public bool IsDeath = false;
 
-	Vector2 ScreenSize;
+	private Vector2 ScreenSize;
+	private SpawnerManager Manager;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
@@ -16,45 +18,49 @@ public class Player : Actor {
 
 		Health = 100;
 		ScreenSize = GetViewportRect().Size;
+		Manager = (SpawnerManager) GetTree().Root.GetChild(0).GetNode("SpawnerManager");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(float delta) {
+		if (!IsDeath) {
+			// Get the input direction and handle the movement/deceleration.
+			// As good practice, you should replace UI actions with custom gameplay actions.
+			Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
+			Vector2 velocity;
 
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down");
-		Vector2 velocity;
+			if (direction != Vector2.Zero) {
+				float monoDirection = 1.21f;
+				if (direction.x != 0 && direction.y != 0)
+					monoDirection = 1.0f;
+				velocity = new Vector2(
+					direction.x * Speed * monoDirection * delta, 
+					direction.y * Speed * monoDirection * delta
+				);
+			} else {
+				velocity = new Vector2(Mathf.MoveToward(Velocity.x, 0, Speed), Mathf.MoveToward(Velocity.y, 0, Speed));
+			}
 
-		if (direction != Vector2.Zero) {
-			float monoDirection = 1.21f;
-			if (direction.x != 0 && direction.y != 0)
-				monoDirection = 1.0f;
-			velocity = new Vector2(
-				direction.x * Speed * monoDirection * delta, 
-				direction.y * Speed * monoDirection * delta
+			Velocity = velocity;
+
+			// apply movement
+			MoveAndSlide(Velocity);
+			
+			// prevent player from going out of scene
+			Position = new Vector2(
+				fix(Position.x, 0, ScreenSize.x), 
+				fix(Position.y, 0, ScreenSize.y)
 			);
-		} else {
-			velocity = new Vector2(Mathf.MoveToward(Velocity.x, 0, Speed), Mathf.MoveToward(Velocity.y, 0, Speed));
 		}
-
-		Velocity = velocity;
-
-		// apply movement
-		MoveAndSlide(Velocity);
-		
-		// prevent player from going out of scene
-		Position = new Vector2(
-			fix(Position.x, 0, ScreenSize.x), 
-			fix(Position.y, 0, ScreenSize.y)
-		);
 	}
 
 	public override void TakeDamage(int d) {
 		Health -= d;
 		GD.Print("Current Health = ", Health);
 		if (Health <= 0) {
-			GD.Print("Game Over");
+			// GD.Print("Game Over");
+			IsDeath = true;
+			Manager.GameOver();
 		}
 	}
 

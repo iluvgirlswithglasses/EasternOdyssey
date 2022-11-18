@@ -8,6 +8,7 @@ public class SpawnerManager : Node {
 	public List<List<Spawner>> Stage = new List<List<Spawner>>();
 
 	public int CurrentPhase;
+	private bool IsGameOver = false;
 	
 	// statistics of THE WHOLE STAGE
 	public int StageKillCount;
@@ -24,11 +25,15 @@ public class SpawnerManager : Node {
 	private Actor Player;
 	private StatDisplayer Stat;
 
+	protected Node Scene;
+	protected AudioStreamPlayer AudioPlayer;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		CurrentPhase = -1;
-		Player = (Actor) GetParent().GetNode("Player");
-		Stat = (StatDisplayer) GetParent().GetNode("StatDisplayer");
+		Scene = GetTree().Root.GetChild(0);
+		Player = (Actor) Scene.GetNode("Player");
+		Stat = (StatDisplayer) Scene.GetNode("StatDisplayer");
 		NextPhase();
 	}
 
@@ -44,6 +49,8 @@ public class SpawnerManager : Node {
 
 	// number of enemy that's done there role
 	public void CountLoss() {
+		if (IsGameOver) return;
+		
 		PhaseLossCount++;
 		GD.Print(String.Format("Loss={0}", PhaseLossCount));
 		if (PhaseLossCount == PhaseEnemyCount) {
@@ -105,8 +112,28 @@ public class SpawnerManager : Node {
 	}
 
 	public virtual void StageComplete() {
+		// remove all strays bullets
+		foreach (Node i in Scene.GetChildren()) {
+			if (i.IsInGroup("EnemyBullet")) {
+				Bullet b = i as Bullet;
+				b.Destroy();
+			}
+		}
 		// edit this later
 		GetParent().RemoveChild(this);
+	}
+
+	/** @ game over */
+	public virtual void GameOver() {
+		GameOverDisplayer displayer = (GameOverDisplayer) Scene.GetNode("GameOverDisplayer");
+		displayer.Visible = true;
+		IsGameOver = true;
+		AudioPlayer.VolumeDb = -15;
+	}
+
+	public virtual void Retry() {
+		PickupMusic.D = AudioPlayer.GetPlaybackPosition();
+		GetTree().ReloadCurrentScene();
 	}
 
 	/** @ tools */
