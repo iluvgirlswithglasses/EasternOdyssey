@@ -34,6 +34,9 @@ public partial class ForwardFrontlineSpawner : Spawner {
 		enemy.Health = Health;
 		enemy.Manager = Manager;
 
+		if (Point != 0)
+			enemy.Point = Point;
+
 		enemy.f = (d) => {
             float localForwardTime = ForwardTime + TDistance * SpawnCount;
 			if (d <= localForwardTime) {

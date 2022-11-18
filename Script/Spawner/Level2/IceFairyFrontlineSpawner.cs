@@ -27,6 +27,9 @@ public class IceFairyFrontlineSpawner : Spawner {
 		IceFairy fairy = (IceFairy) fairyScene.Instance();
 		fairy.Health = Health;
 		fairy.Manager = Manager;
+		if (Point != 0)
+			fairy.Point = Point;
+		
 		fairy.f = (d) => { 
 			return new Vector2(
 				XDirection * FairySpeed * (float) Cos(d * XRadMod) + XConst, YDirection * FairySpeed

@@ -9,6 +9,8 @@ public class Spawner : Node2D {
     public uint EnemyCount;
     [Export]
     public float SpawnRate;
+    [Export]
+    public int Point; // score for each kill. If == 0, the default value is applied
 
     // Waited time from spawn to action
     [Export]
@@ -21,7 +23,6 @@ public class Spawner : Node2D {
     public override void _Ready() {
         Scene = GetTree().Root.GetChild(0);
         Manager = GetParent<SpawnerManager>();
-
 
         WaitTime += Constants.PHASE_TRANSITION_TIME;
         Started = false;

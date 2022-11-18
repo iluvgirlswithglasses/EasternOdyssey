@@ -11,6 +11,7 @@ extents = Vector2( 15.5, 17 )
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 1 )
+Point = 20
 ShootTDiff = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
