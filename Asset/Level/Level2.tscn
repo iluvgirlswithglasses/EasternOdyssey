@@ -82,16 +82,16 @@ XForwardSpeed = -100.0
 
 [node name="IceFairy-00-00" parent="SpawnerManager" instance=ExtResource( 4 )]
 position = Vector2( 1024, 50 )
-EnemyCount = 4
-SpawnRate = 1.0
+EnemyCount = 5
+SpawnRate = 0.75
 Health = 5
 GunDelta = 1.0
 
 [node name="IceFairy-00-01" parent="SpawnerManager" instance=ExtResource( 4 )]
 position = Vector2( 1024, 550 )
-EnemyCount = 4
-SpawnRate = 1.0
-WaitTime = 4.0
+EnemyCount = 5
+SpawnRate = 0.75
+WaitTime = 3.0
 Health = 5
 GunDelta = 1.0
 XForwardSpeed = -300.0
@@ -238,8 +238,11 @@ margin_bottom = 215.0
 script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="CenterContainer"]
-margin_right = 605.0
+margin_left = 16.0
+margin_right = 589.0
 margin_bottom = 115.0
 custom_fonts/font = SubResource( 1 )
-text = "Stage 2:
-The Endless Winds' Trajectory"
+text = "Stage 1:
+Legacy of Lunatic Kingdom"
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]

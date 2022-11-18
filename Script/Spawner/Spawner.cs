@@ -53,4 +53,8 @@ public class Spawner : Node2D {
     protected virtual void Spawn() {
 
     }
+
+    public virtual void PlayPhaseMusic() {
+        
+    }
 }

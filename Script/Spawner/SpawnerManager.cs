@@ -98,8 +98,10 @@ public class SpawnerManager : Node {
 		PhaseEnemyCount = CountEnemyInPhase(CurrentPhase);
 		GD.Print(String.Format("Phase = {0}; Count = {1}", CurrentPhase, PhaseEnemyCount));
 		// enable spawners in this phase
-		foreach (Spawner s in Stage[CurrentPhase])
+		foreach (Spawner s in Stage[CurrentPhase]) {
 			s.SetProcess(true);
+			s.PlayPhaseMusic();
+		}
 	}
 
 	public virtual void StageComplete() {

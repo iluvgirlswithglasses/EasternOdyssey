@@ -15,6 +15,12 @@ public class Level2Manager : SpawnerManager {
 		AddPhase(new List<string>(){"WindFairySA-06-00", "WindFairySA-06-01", "IceFairy-06-02"});
 		AddPhase(new List<string>(){"ClownpieceSpawner", "ClownpieceSupportSpawner-00", "ClownpieceSupportSpawner-01"});
 		base._Ready();
+
+		// The Space Shrine Maiden Appears
+		AudioStreamMP3 stream = (AudioStreamMP3) GD.Load("res://Audio/Background/Stage2.mp3");
+		AudioStreamPlayer player = (AudioStreamPlayer) GetTree().Root.GetChild(0).GetNode("AudioPlayer");
+		player.Stream = stream;
+		player.Play();
 	}
 
 }

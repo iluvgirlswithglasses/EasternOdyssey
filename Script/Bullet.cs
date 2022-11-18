@@ -49,7 +49,7 @@ public class Bullet : KinematicBody2D {
 				if (collider.IsInGroup(Target)) {
 					var target = (Actor) GetSlideCollision(i).Collider;
 					target.TakeDamage(Damage);
-					GetParent().RemoveChild(this);
+					Destroy();
 					return;
 				}
 			}
@@ -57,5 +57,11 @@ public class Bullet : KinematicBody2D {
 		// check if out of scene
 		if (ScreenTool.IsOutOfScreen(GetViewportRect().Size, Position))
 			GetParent().RemoveChild(this);
+	}
+
+	public void Destroy() {
+		// add effect here
+
+		GetParent().RemoveChild(this);
 	}
 }

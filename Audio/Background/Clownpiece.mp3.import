@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Clownpiece.mp3-f8f891aae8bf452d99e4d7ccdb72f0ed.mp3str"
+
+[deps]
+
+source_file="res://Audio/Background/Clownpiece.mp3"
+dest_files=[ "res://.import/Clownpiece.mp3-f8f891aae8bf452d99e4d7ccdb72f0ed.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
