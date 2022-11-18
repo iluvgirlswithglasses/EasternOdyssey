@@ -9,7 +9,7 @@ radius = 12.0416
 flags = 4
 load_path = "res://.import/Bullets.png-3b3dd7f3dc0134822eb0d397ac5ed0ff.stex"
 
-[node name="MoonRabitShotgunBullet" type="KinematicBody2D"]
+[node name="MoonRabitShotgunBullet" type="KinematicBody2D" groups=["EnemyBullet"]]
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
