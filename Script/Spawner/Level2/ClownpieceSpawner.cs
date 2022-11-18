@@ -19,9 +19,9 @@ public class ClownpieceSpawner : Spawner {
 
 	public override void PlayPhaseMusic() {
 		// Pierrot of the Star ~ Spangled Banner 
-		AudioStreamMP3 stream = (AudioStreamMP3) GD.Load("res://Audio/Background/Clownpiece.mp3");
-		AudioStreamPlayer player = (AudioStreamPlayer) Scene.GetNode("AudioPlayer");
-		player.Stream = stream;
-		player.Play();
+		// AudioStreamMP3 stream = (AudioStreamMP3) GD.Load("res://Audio/Background/Clownpiece.mp3");
+		// AudioStreamPlayer player = (AudioStreamPlayer) Scene.GetNode("AudioPlayer");
+		// player.Stream = stream;
+		// player.Play();
 	}
 }

@@ -20,7 +20,7 @@ public class Level2Manager : SpawnerManager {
 		AudioStreamMP3 stream = (AudioStreamMP3) GD.Load("res://Audio/Background/Stage2.mp3");
 		AudioStreamPlayer player = (AudioStreamPlayer) GetTree().Root.GetChild(0).GetNode("AudioPlayer");
 		player.Stream = stream;
-		player.Play();
+		player.Play(PickupMusic.D);
 	}
 
 }
