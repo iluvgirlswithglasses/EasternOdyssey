@@ -2,6 +2,8 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+// this class should have been named "Level manager" tbh
+
 public class SpawnerManager : Node {
 	
 	// Stage[i]: All Spawner of a Phase
@@ -119,6 +121,13 @@ public class SpawnerManager : Node {
 			if (i.IsInGroup("EnemyBullet")) {
 				Bullet b = i as Bullet;
 				b.Destroy();
+			}
+		}
+		// remove all ui element
+		foreach (Node i in Scene.GetChildren()) {
+			if (i is Control) {
+				Control j = i as Control;
+				j.Visible = false;
 			}
 		}
 		// edit this later

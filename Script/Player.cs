@@ -61,11 +61,17 @@ public class Player : Actor {
 	}
 
 	public override void TakeDamage(int d) {
+		// if already dead
+		if (Health <= 0)
+			return;
 		Health -= d;
-		GD.Print("Current Health = ", Health);
 		if (Health <= 0) {
 			Health = 0;		// just to make sure this is non-negative
 			IsDeath = true;
+			// remove all child nodes
+			foreach (Node i in GetChildren())
+				this.RemoveChild(i);
+			// annnouce death
 			Manager.GameOver();
 		}
 		HealthDisp.SetCurrentHealth(Health);
