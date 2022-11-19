@@ -2,7 +2,7 @@ using Godot;
 using static System.Math;
 
 public partial class ForwardFrontlineSpawner : Spawner {
-	private PackedScene enemyScene;
+	protected PackedScene EnemyScene;
 
 	[Export] public string EnemyDir = "IceFairy";
 	[Export] public int Health;
@@ -26,11 +26,11 @@ public partial class ForwardFrontlineSpawner : Spawner {
 
 	public override void _Ready() {
 		base._Ready();
-        enemyScene = (PackedScene) GD.Load(string.Format("res://Asset/Object/Enemy/{0}.tscn", EnemyDir));
+        EnemyScene = (PackedScene) GD.Load(string.Format("res://Asset/Object/Enemy/{0}.tscn", EnemyDir));
 	}
 
 	protected override void Spawn() {
-		VeloMovementEnemy enemy = (VeloMovementEnemy) enemyScene.Instance();
+		VeloMovementEnemy enemy = (VeloMovementEnemy) EnemyScene.Instance();
 		enemy.Health = Health;
 		enemy.Manager = Manager;
 

@@ -8,6 +8,8 @@ public class MoonRabit : VeloMovementEnemy {
 	[Export]
 	public float RotateSpeed = 1f;
 
+	private HealthDisplayer healthDisp;
+
 	public override void _Ready() {
 		f = (d) => {
 			// the first 3 seconds
@@ -20,6 +22,18 @@ public class MoonRabit : VeloMovementEnemy {
 				(float) Sin(- PI/4 + (d - 2) * RotateSpeed) * Speed * 0.45f
 			);
 		};
+		
+		// healthbar
+		healthDisp = (HealthDisplayer) GetTree().Root.GetChild(0).GetNode("BossHealthBar");
+		healthDisp.SetMaxHealth(Health);
+		healthDisp.SetCurrentHealth(Health);
+		healthDisp.SetLabel("BOSS: ");
+		healthDisp.Visible = true;
+	}
+
+	public override void TakeDamage(int d) {
+		base.TakeDamage(d);
+		healthDisp.SetCurrentHealth(Health);
 	}
 
 	public override void ProcessOutOfScreen() {

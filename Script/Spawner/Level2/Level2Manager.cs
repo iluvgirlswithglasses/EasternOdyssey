@@ -17,11 +17,11 @@ public class Level2Manager : SpawnerManager {
 		AddPhase(new List<string>(){"ClownpieceSpawner", "ClownpieceSupportSpawner-00", "ClownpieceSupportSpawner-01"});
 		base._Ready();
 
-		// The Space Shrine Maiden Appears
+		// Pierrot of the Star-Spangled Banner 
 		AudioStreamMP3 stream = (AudioStreamMP3) GD.Load("res://Audio/Background/Clownpiece.mp3");
 		AudioPlayer.Stream = stream;
 		AudioPlayer.Play(PickupMusic.D);
-		AudioPlayer.VolumeDb = 0;
+		AudioPlayer.VolumeDb = -2;
 	}
 
 }

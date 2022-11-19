@@ -1,14 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Script/Enemy/IceFairy.cs" type="Script" id=1]
+[ext_resource path="res://Script/Enemy/LightFairy.cs" type="Script" id=1]
 [ext_resource path="res://Script/Gun/Enemy/LightFairyGun.cs" type="Script" id=2]
+[ext_resource path="res://Sprite/RawSource/EnemySheet.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 15, 18 )
-
-[sub_resource type="StreamTexture" id=3]
-flags = 4
-load_path = "res://.import/IceFairy.png-33fb9f32cf105203d2cae44277810362.stex"
+extents = Vector2( 15, 21 )
 
 [sub_resource type="AtlasTexture" id=2]
 
@@ -16,19 +13,40 @@ load_path = "res://.import/IceFairy.png-33fb9f32cf105203d2cae44277810362.stex"
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 1 )
-Health = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Gun" type="Node2D" parent="."]
+[node name="Gun0" type="Node2D" parent="."]
 script = ExtResource( 2 )
+FireRate = 1.0
+BulletSprite = "LightFairyBullet"
+Speed = 50.0
+Acceleration = 100.0
+RotateSpeed = 0.0
+
+[node name="Gun1" type="Node2D" parent="."]
+script = ExtResource( 2 )
+FireRate = 1.0
+BulletSprite = "LightFairyBullet"
+Speed = 50.0
+Acceleration = 100.0
+RotateSpeed = 0.0
+AlphaDeg = -60.0
+
+[node name="Gun2" type="Node2D" parent="."]
+script = ExtResource( 2 )
+FireRate = 1.0
+BulletSprite = "LightFairyBullet"
+Speed = 50.0
+Acceleration = 100.0
+RotateSpeed = 0.0
 
 [node name="LightFairy" type="Sprite" parent="."]
-position = Vector2( 7, 0 )
 rotation = 1.55683
 scale = Vector2( 1.4, 1.4 )
-texture = SubResource( 3 )
+texture = ExtResource( 3 )
 normal_map = SubResource( 2 )
+flip_v = true
 region_enabled = true
-region_rect = Rect2( 3, 2, 26, 30 )
+region_rect = Rect2( 363.603, 419.511, 32.3406, 34.9073 )

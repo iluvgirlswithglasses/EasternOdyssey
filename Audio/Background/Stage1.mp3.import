@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Stage1.mp3-cc0840d8004fb037940364d7e980a452.mp3str"
+
+[deps]
+
+source_file="res://Audio/Background/Stage1.mp3"
+dest_files=[ "res://.import/Stage1.mp3-cc0840d8004fb037940364d7e980a452.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
