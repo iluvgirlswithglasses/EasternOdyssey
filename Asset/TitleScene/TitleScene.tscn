@@ -1,20 +1,162 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Font/BRLNSR.TTF" type="DynamicFontData" id=1]
 [ext_resource path="res://Script/UI/TitleScene.cs" type="Script" id=2]
+[ext_resource path="res://Font/BRLNSR.tres" type="DynamicFontData" id=3]
+[ext_resource path="res://Sprite/Background/title-scene.png" type="Texture" id=4]
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1200, 0, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 2400, 0, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 3600, 0, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 4800, 0, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 640, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1200, 640, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 2400, 640, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 3600, 640, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 4800, 640, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 1280, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=15]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1200, 1280, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=16]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 2400, 1280, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=17]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 3600, 1280, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=18]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 4800, 1280, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=19]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 1920, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=20]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1200, 1920, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=21]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 2400, 1920, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=22]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 3600, 1920, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=23]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 4800, 1920, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 2560, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 1200, 2560, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 2400, 2560, 1200, 640 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 3600, 2560, 1200, 640 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 20
+font_data = ExtResource( 3 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 437, 300 )
+frames = SubResource( 3 )
+frame = 4
+playing = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
-anchor_top = 0.5
-anchor_bottom = 0.5
+anchor_top = 0.353333
+anchor_bottom = 0.353333
 margin_left = 352.0
 margin_top = -125.0
 margin_right = 672.0
@@ -55,6 +197,16 @@ text = "Exit"
 [node name="EffectPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 573.0
+margin_top = 538.0
+margin_right = 1005.0
+margin_bottom = 587.0
+custom_fonts/font = SubResource( 2 )
+text = "Music by Team Shanghai Alice
+Game by Team Flaming Watermelon"
+align = 2
 
 [connection signal="button_down" from="VBoxContainer/Start" to="." method="StartGame"]
 [connection signal="button_down" from="VBoxContainer/Continue" to="." method="ContinueGame"]
