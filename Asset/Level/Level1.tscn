@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Asset/Object/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/Spawner/Level1/MoonRabitSpawner.cs" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Script/UI/GreetingScene.cs" type="Script" id=9]
 [ext_resource path="res://Asset/Spawner/IceFairyFrontlineSpawner.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Asset/Spawner/FireFairyFrontlineSpawner.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Asset/UI/NextStageDisplayer.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -122,7 +123,7 @@ position = Vector2( 1035, 75 )
 EnemyCount = 7
 SpawnRate = 0.25
 EnemyDir = "WindFairy"
-Health = 5
+Health = 3
 FireRate = 1.5
 GunDelta = 0.5
 RelativeToPlayer = 0
@@ -134,7 +135,7 @@ EnemyCount = 7
 SpawnRate = 0.25
 WaitTime = 8.5
 EnemyDir = "WindFairy"
-Health = 5
+Health = 3
 FireRate = 1.5
 GunDelta = 0.5
 RelativeToPlayer = 0
@@ -272,6 +273,9 @@ The Endless Winds' Trajectory"
 visible = false
 
 [node name="GameOverDisplayer" parent="." instance=ExtResource( 5 )]
+visible = false
+
+[node name="NextStageDisplayer" parent="." instance=ExtResource( 12 )]
 visible = false
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]

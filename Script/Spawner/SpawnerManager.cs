@@ -126,8 +126,17 @@ public class SpawnerManager : Node {
 		// remove unnecessary ui element
 		Scene.GetNode<Control>("PlayerHealthBar").Visible = false;
 		Scene.GetNode<Control>("BossHealthBar").Visible = false;
-		// edit this later
-		GetParent().RemoveChild(this);
+		// 
+		if (++PickupLevel.CurrentLevel > PickupLevel.FinalLevel) {
+			// the player won the game
+
+			// if the player pressed "continue" on the title scene
+			// the last level will be played
+			PickupLevel.CurrentLevel--;
+		} else {
+			// go to next stage
+			Scene.GetNode<Control>("NextStageDisplayer").Visible = true;
+		}
 	}
 
 	/** @ game over */

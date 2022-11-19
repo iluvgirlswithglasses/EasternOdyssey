@@ -1,6 +1,8 @@
 using System;
 
-// pickup the last level that the player have played
 static public class PickupLevel {
-    static public int LastLevel = 1;
+    // the last level that the player's playing on
+    static public int CurrentLevel = 1;
+    // the last level of this game
+    static public int FinalLevel = 2;
 }

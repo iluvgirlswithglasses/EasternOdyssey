@@ -18,11 +18,11 @@ public partial class TitleScene : Control {
 	}
 
 	public void StartGame() {
-		PickupLevel.LastLevel = 1;
+		PickupLevel.CurrentLevel = 1;
 		ContinueGame();
 	}
 
 	public void ContinueGame() {
-		GetTree().ChangeScene(string.Format("res://Asset/Level/Level{0}.tscn", PickupLevel.LastLevel));
+		GetTree().ChangeScene(string.Format("res://Asset/Level/Level{0}.tscn", PickupLevel.CurrentLevel));
 	}
 }
