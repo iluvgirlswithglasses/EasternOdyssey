@@ -123,13 +123,9 @@ public class SpawnerManager : Node {
 				b.Destroy();
 			}
 		}
-		// remove all ui element
-		foreach (Node i in Scene.GetChildren()) {
-			if (i is Control) {
-				Control j = i as Control;
-				j.Visible = false;
-			}
-		}
+		// remove unnecessary ui element
+		Scene.GetNode<Control>("PlayerHealthBar").Visible = false;
+		Scene.GetNode<Control>("BossHealthBar").Visible = false;
 		// edit this later
 		GetParent().RemoveChild(this);
 	}

@@ -41,6 +41,7 @@ BulletSprite = "LightFairyBullet"
 Speed = 50.0
 Acceleration = 100.0
 RotateSpeed = 0.0
+AlphaDeg = 60.0
 
 [node name="LightFairy" type="Sprite" parent="."]
 rotation = 1.55683

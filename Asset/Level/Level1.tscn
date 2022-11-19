@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Asset/Object/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Script/Spawner/Level1/MoonRabitSpawner.cs" type="Script" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Asset/UI/StatDisplayer.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Font/BRLNSR.TTF" type="DynamicFontData" id=8]
 [ext_resource path="res://Script/UI/GreetingScene.cs" type="Script" id=9]
+[ext_resource path="res://Asset/Spawner/IceFairyFrontlineSpawner.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Asset/Spawner/FireFairyFrontlineSpawner.tscn" type="PackedScene" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -43,6 +45,8 @@ SpawnRate = 0.75
 Point = 10
 EnemyDir = "LightFairy"
 Health = 5
+FireRate = 1.0
+GunDelta = 0.75
 RelativeToPlayer = 0
 ForwardTime = 10.0
 Theta = 0.0
@@ -56,9 +60,11 @@ position = Vector2( 850, 610 )
 EnemyCount = 8
 SpawnRate = 0.75
 Point = 10
-WaitTime = 3.0
+WaitTime = 2.625
 EnemyDir = "LightFairy"
 Health = 5
+FireRate = 1.0
+GunDelta = 0.5
 RelativeToPlayer = 0
 ForwardTime = 10.0
 Theta = 0.0
@@ -66,6 +72,180 @@ XForwardSpeed = -20.0
 YForwardSpeed = -100.0
 XAcceleration = -10.0
 YDistance = 0.0
+
+[node name="WindFairy-01-00" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 1030, 225 )
+EnemyCount = 3
+SpawnRate = 1.0
+EnemyDir = "WindFairy"
+Health = 10
+GunDelta = 0.25
+
+[node name="LightFairy-01-01" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 1000, -20 )
+EnemyCount = 8
+SpawnRate = 0.75
+Point = 10
+WaitTime = 3.0
+EnemyDir = "LightFairy"
+Health = 5
+FireRate = 1.0
+GunDelta = 0.75
+RelativeToPlayer = 0
+ForwardTime = 10.0
+Theta = 0.0
+XForwardSpeed = -20.0
+YForwardSpeed = 100.0
+XAcceleration = -40.0
+YDistance = 0.0
+
+[node name="LightFairy-01-02" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 950, -20 )
+EnemyCount = 8
+SpawnRate = 0.75
+Point = 10
+WaitTime = 6.0
+EnemyDir = "LightFairy"
+Health = 5
+FireRate = 1.0
+GunDelta = 0.75
+RelativeToPlayer = 0
+ForwardTime = 10.0
+Theta = 0.0
+XForwardSpeed = -20.0
+YForwardSpeed = 100.0
+XAcceleration = -40.0
+YDistance = 0.0
+
+[node name="WindFairy-02-00" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 1035, 75 )
+EnemyCount = 7
+SpawnRate = 0.25
+EnemyDir = "WindFairy"
+FireRate = 1.5
+GunDelta = 0.5
+RelativeToPlayer = 0
+ForwardTime = 1.0
+
+[node name="WindFairy-02-01" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 1035, 75 )
+EnemyCount = 7
+SpawnRate = 0.25
+WaitTime = 8.0
+EnemyDir = "WindFairy"
+FireRate = 1.5
+GunDelta = 0.5
+RelativeToPlayer = 0
+ForwardTime = 1.0
+
+[node name="LightFairy-02-02" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 950, 610 )
+EnemyCount = 8
+SpawnRate = 0.75
+Point = 10
+EnemyDir = "LightFairy"
+Health = 5
+FireRate = 1.0
+GunDelta = 0.75
+RelativeToPlayer = 0
+ForwardTime = 10.0
+Theta = 0.0
+XForwardSpeed = -20.0
+YForwardSpeed = -100.0
+XAcceleration = -10.0
+YDistance = 0.0
+
+[node name="IceFairy-03-00" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 1050, 175 )
+EnemyCount = 4
+SpawnRate = 1.25
+Health = 5
+GunDelta = 1.0
+
+[node name="FireFairy-03-01" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 1032, 550 )
+EnemyCount = 3
+SpawnRate = 1.0
+WaitTime = 5.0
+EnemyDir = "FireFairy"
+Health = 5
+FireRate = 1.5
+GunDelta = 1.0
+ForwardTime = 1.0
+YDistance = -75.0
+
+[node name="LightFairy-04-00" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 975, 590 )
+EnemyCount = 8
+SpawnRate = 0.75
+Point = 10
+EnemyDir = "LightFairy"
+Health = 5
+FireRate = 1.0
+GunDelta = 0.75
+RelativeToPlayer = 0
+ForwardTime = 10.0
+Theta = 0.0
+XForwardSpeed = -20.0
+YForwardSpeed = -100.0
+XAcceleration = -10.0
+YDistance = 0.0
+
+[node name="LightFairy-04-01" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 1000, -20 )
+EnemyCount = 8
+SpawnRate = 0.75
+Point = 10
+WaitTime = 1.0
+EnemyDir = "LightFairy"
+Health = 5
+FireRate = 1.0
+GunDelta = 0.75
+RelativeToPlayer = 0
+ForwardTime = 10.0
+Theta = 0.0
+XForwardSpeed = -20.0
+YForwardSpeed = 100.0
+XAcceleration = -40.0
+YDistance = 0.0
+
+[node name="WindFairy-04-02" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 1030, 300 )
+EnemyCount = 1
+WaitTime = 6.0
+EnemyDir = "WindFairy"
+Health = 10
+FireRate = 1.5
+GunDelta = 0.75
+ForwardTime = 0.75
+
+[node name="VertexFairy-05-00" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 1040, 200 )
+EnemyCount = 1
+EnemyDir = "VertexFairy"
+Health = 120
+FireRate = 6.0
+GunDelta = 3.5
+
+[node name="VertexFairy-05-01" parent="SpawnerManager" instance=ExtResource( 6 )]
+position = Vector2( 1040, 400 )
+EnemyCount = 1
+EnemyDir = "VertexFairyReverse"
+Health = 120
+FireRate = 6.0
+GunDelta = 3.5
+
+[node name="FireFairy-06-00" parent="SpawnerManager" instance=ExtResource( 11 )]
+position = Vector2( 900, -10 )
+EnemyCount = 3
+SpawnRate = 1.0
+
+[node name="IceFairy-06-01" parent="SpawnerManager" instance=ExtResource( 10 )]
+position = Vector2( 800, 620 )
+EnemyCount = 3
+SpawnRate = 1.0
+WaitTime = 3.0
+YDirection = -1
 
 [node name="MoonRabitSpawner" type="Node2D" parent="SpawnerManager"]
 position = Vector2( 1180, 300 )
