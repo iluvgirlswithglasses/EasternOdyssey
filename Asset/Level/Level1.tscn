@@ -124,8 +124,8 @@ EnemyCount = 7
 SpawnRate = 0.25
 EnemyDir = "WindFairy"
 Health = 3
-FireRate = 1.5
-GunDelta = 0.5
+FireRate = 2.5
+GunDelta = 1.5
 RelativeToPlayer = 0
 ForwardTime = 1.0
 
@@ -136,8 +136,8 @@ SpawnRate = 0.25
 WaitTime = 8.5
 EnemyDir = "WindFairy"
 Health = 3
-FireRate = 1.5
-GunDelta = 0.5
+FireRate = 2.5
+GunDelta = 1.5
 RelativeToPlayer = 0
 ForwardTime = 1.0
 
