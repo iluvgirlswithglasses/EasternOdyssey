@@ -25,6 +25,13 @@ margin_top = 550.0
 margin_right = 25.0
 margin_bottom = 550.0
 
+[node name="BossHealthBar" parent="." instance=ExtResource( 11 )]
+visible = false
+margin_left = 600.0
+margin_top = 20.0
+margin_right = 600.0
+margin_bottom = 20.0
+
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 175, 300 )
 

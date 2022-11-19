@@ -125,10 +125,18 @@ public class SpawnerManager : Node {
 
 	/** @ game over */
 	public virtual void GameOver() {
+		// remove all ui element
+		foreach (Node i in Scene.GetChildren()) {
+			if (i is Control) {
+				Control j = i as Control;
+				j.Visible = false;
+			}
+		}
+		//
 		GameOverDisplayer displayer = (GameOverDisplayer) Scene.GetNode("GameOverDisplayer");
 		displayer.Visible = true;
 		IsGameOver = true;
-		AudioPlayer.VolumeDb = -12;
+		AudioPlayer.VolumeDb = -15;
 	}
 
 	public virtual void Retry() {

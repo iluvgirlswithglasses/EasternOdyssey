@@ -12,6 +12,7 @@ public class HealthDisplayer : Control {
 	public override void _Ready() {
 		base._Ready();
 		bar = (ProgressBar) GetNode("Bar");
+		label = (Label) GetNode("Label");
 	}
 
 	public void SetMaxHealth(int h) {

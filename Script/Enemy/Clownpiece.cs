@@ -11,6 +11,7 @@ public class Clownpiece : VeloMovementEnemy {
 
 	private IceFairyGun pistol1;
 	private IceFairyGun pistol2;
+	private HealthDisplayer healthDisp;
 
 	public override void _Ready() {
 		// some guns that are disabled by default
@@ -18,7 +19,7 @@ public class Clownpiece : VeloMovementEnemy {
 		pistol2 = GetNode<IceFairyGun>("PistolGun2");
 		pistol1.SetProcess(false);
 		pistol2.SetProcess(false);
-		//
+		// movement
 		f = (d) => {
 			// the first 2 seconds
 			if (d < 4.0) {
@@ -30,6 +31,10 @@ public class Clownpiece : VeloMovementEnemy {
 				(float) Sin(d * RotateSpeed) * Speed
 			);
 		};
+		// healthbar
+		healthDisp = (HealthDisplayer) GetTree().Root.GetChild(0).GetNode("BossHealthBar");
+		healthDisp.SetLabel("BOSS: ");
+		healthDisp.Visible = true;
 	}
 
 	public override void TakeDamage(int d) {
@@ -38,6 +43,7 @@ public class Clownpiece : VeloMovementEnemy {
 			pistol1.SetProcess(true);
 			pistol2.SetProcess(true);
 		}
+		healthDisp.SetCurrentHealth(Health);
 	}
 
 	public override void ProcessOutOfScreen() {
