@@ -212,7 +212,7 @@ position = Vector2( 1024, 575 )
 EnemyCount = 4
 SpawnRate = 1.0
 EnemyDir = "WindFairySingleAction"
-Health = 1
+Health = 4
 FireRate = 3.0
 GunDelta = 2.0
 RelativeToPlayer = 0
@@ -228,7 +228,7 @@ position = Vector2( 1024, 15 )
 EnemyCount = 4
 SpawnRate = 1.0
 EnemyDir = "WindFairySingleAction"
-Health = 1
+Health = 4
 FireRate = 3.0
 GunDelta = 2.0
 RelativeToPlayer = 0
@@ -281,7 +281,7 @@ script = ExtResource( 8 )
 margin_right = 750.0
 margin_bottom = 119.0
 custom_fonts/font = SubResource( 1 )
-text = "Stage 1:
+text = "Stage 2:
 Legacy of Lunatic Kingdom"
 
 [node name="StatDisplayer" parent="." instance=ExtResource( 5 )]
