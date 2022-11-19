@@ -15,7 +15,7 @@ script = ExtResource( 2 )
 Health = 350
 Point = 500
 Speed = 100
-FurryThreshold = 350
+FurryThreshold = 100
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -49,6 +49,21 @@ FireRate = 6.0
 Delta = 0.5
 BulletSprite = "ClownpieceSpiralBulletBlue"
 RotateSpeed = -1.0
+
+[node name="PistolGunA" type="Node2D" parent="."]
+position = Vector2( -110, -40 )
+script = ExtResource( 4 )
+FireRate = 2.0
+BulletSprite = "ClownpieceForwardBullet"
+SPEED = 400.0
+
+[node name="PistolGunB" type="Node2D" parent="."]
+position = Vector2( -110, 40 )
+script = ExtResource( 4 )
+FireRate = 2.0
+Delta = 0.2
+BulletSprite = "ClownpieceForwardBullet"
+SPEED = 400.0
 
 [node name="PistolGun1" type="Node2D" parent="."]
 position = Vector2( -110, -40 )

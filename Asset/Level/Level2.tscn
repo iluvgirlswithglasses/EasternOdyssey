@@ -289,4 +289,10 @@ visible = false
 [node name="GameOverDisplayer" parent="." instance=ExtResource( 10 )]
 visible = false
 
-[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="UIEffectPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="GunEffectPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ExplosionPlayer" type="AudioStreamPlayer" parent="."]

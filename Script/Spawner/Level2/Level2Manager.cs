@@ -19,7 +19,6 @@ public class Level2Manager : SpawnerManager {
 
 		// The Space Shrine Maiden Appears
 		AudioStreamMP3 stream = (AudioStreamMP3) GD.Load("res://Audio/Background/Clownpiece.mp3");
-		AudioPlayer = (AudioStreamPlayer) GetTree().Root.GetChild(0).GetNode("AudioPlayer");
 		AudioPlayer.Stream = stream;
 		AudioPlayer.Play(PickupMusic.D);
 		AudioPlayer.VolumeDb = 0;

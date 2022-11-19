@@ -8,7 +8,7 @@ size = 50
 font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-size = 28
+size = 24
 font_data = ExtResource( 3 )
 
 [node name="StatDisplayer" type="Control"]
@@ -33,92 +33,92 @@ align = 1
 [node name="_Label_EnemyCount" type="Label" parent="Container"]
 margin_top = 62.0
 margin_right = 510.0
-margin_bottom = 131.0
+margin_bottom = 121.0
 custom_fonts/font = SubResource( 2 )
 text = "
 Enemy Count:"
 
 [node name="EnemyCount" type="Label" parent="Container"]
-margin_top = 135.0
+margin_top = 125.0
 margin_right = 510.0
-margin_bottom = 168.0
+margin_bottom = 153.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 
 [node name="_Label_KillCount" type="Label" parent="Container"]
-margin_top = 172.0
+margin_top = 157.0
 margin_right = 510.0
-margin_bottom = 205.0
+margin_bottom = 185.0
 custom_fonts/font = SubResource( 2 )
 text = "Kill Count:"
 
 [node name="KillCount" type="Label" parent="Container"]
-margin_top = 209.0
+margin_top = 189.0
 margin_right = 510.0
-margin_bottom = 242.0
+margin_bottom = 217.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 
 [node name="_Label_KillPercentage" type="Label" parent="Container"]
-margin_top = 246.0
+margin_top = 221.0
 margin_right = 510.0
-margin_bottom = 279.0
+margin_bottom = 249.0
 custom_fonts/font = SubResource( 2 )
 text = "Kill Percentage:"
 
 [node name="KillPercentage" type="Label" parent="Container"]
-margin_top = 283.0
+margin_top = 253.0
 margin_right = 510.0
-margin_bottom = 316.0
+margin_bottom = 281.0
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 
 [node name="_Label_GainedPoint" type="Label" parent="Container"]
-margin_top = 320.0
+margin_top = 285.0
 margin_right = 510.0
-margin_bottom = 353.0
+margin_bottom = 313.0
 custom_fonts/font = SubResource( 2 )
 text = "Gained Points:"
 
 [node name="GainedPoint" type="Label" parent="Container"]
-margin_top = 357.0
+margin_top = 317.0
 margin_right = 510.0
-margin_bottom = 390.0
+margin_bottom = 345.0
 custom_colors/font_color = Color( 1, 0, 0.960784, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 
 [node name="_Label_HitlessBonus" type="Label" parent="Container"]
-margin_top = 394.0
+margin_top = 349.0
 margin_right = 510.0
-margin_bottom = 427.0
+margin_bottom = 377.0
 custom_fonts/font = SubResource( 2 )
 text = "HITLESS Bonus:"
 
 [node name="HitlessBonus" type="Label" parent="Container"]
-margin_top = 431.0
+margin_top = 381.0
 margin_right = 510.0
-margin_bottom = 464.0
+margin_bottom = 409.0
 custom_colors/font_color = Color( 1, 0.560784, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "0"
 align = 2
 
 [node name="_Label_TotalPoint" type="Label" parent="Container"]
-margin_top = 468.0
+margin_top = 413.0
 margin_right = 510.0
-margin_bottom = 501.0
+margin_bottom = 441.0
 custom_fonts/font = SubResource( 2 )
 text = "Total Points:"
 
 [node name="TotalPoint" type="Label" parent="Container"]
-margin_top = 505.0
+margin_top = 445.0
 margin_right = 510.0
-margin_bottom = 538.0
+margin_bottom = 473.0
 custom_colors/font_color = Color( 1, 0.560784, 0, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "0"

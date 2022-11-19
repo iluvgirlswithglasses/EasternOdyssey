@@ -32,6 +32,7 @@ public class SpawnerManager : Node {
 	public override void _Ready() {
 		CurrentPhase = -1;
 		Scene = GetTree().Root.GetChild(0);
+		AudioPlayer = (AudioStreamPlayer) GetTree().Root.GetChild(0).GetNode("BackgroundMusicPlayer");
 		Player = (Actor) Scene.GetNode("Player");
 		Stat = (StatDisplayer) Scene.GetNode("StatDisplayer");
 		NextPhase();
@@ -98,6 +99,7 @@ public class SpawnerManager : Node {
 		//
 		CurrentPhase++;
 		if (CurrentPhase == Stage.Count) {
+			Stat.AutoDisappear = false;
 			StageComplete();
 			return;
 		}

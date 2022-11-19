@@ -11,10 +11,11 @@ public class StatDisplayer : Control {
 	public Label GainedPoint;
 	public Label TotalPoint;
 
-	private float MaxTimeShown = Constants.PHASE_TRANSITION_TIME - 0.5f;
-	private float AnimationDuration;
 
 	// display mechanism
+	private float MaxTimeShown = Constants.PHASE_TRANSITION_TIME - 0.5f;
+	public bool AutoDisappear = true;
+	private float AnimationDuration;
 	private bool IsShown = false;
 	private float TimeShown = 0f;
 
@@ -40,10 +41,11 @@ public class StatDisplayer : Control {
 
 			if (TimeShown <= AnimationDuration)
 				Modulate = new Color(1, 1, 1, TimeShown / AnimationDuration);
-			if (TimeShown >= AnimationDuration * 2)
+			
+			if (AutoDisappear && TimeShown >= AnimationDuration * 2)
 				Modulate = new Color(1, 1, 1, (MaxTimeShown - TimeShown) / AnimationDuration);
 
-			if (TimeShown >= MaxTimeShown) {
+			if (AutoDisappear && TimeShown >= MaxTimeShown) {
 				IsShown = false;
 				TimeShown = 0f;
 				Visible = false;
