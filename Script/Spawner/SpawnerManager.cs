@@ -128,7 +128,7 @@ public class SpawnerManager : Node {
 		GameOverDisplayer displayer = (GameOverDisplayer) Scene.GetNode("GameOverDisplayer");
 		displayer.Visible = true;
 		IsGameOver = true;
-		AudioPlayer.VolumeDb = -15;
+		AudioPlayer.VolumeDb = -12;
 	}
 
 	public virtual void Retry() {

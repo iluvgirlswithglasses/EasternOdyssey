@@ -8,6 +8,7 @@ public class Player : Actor {
 
 	private Vector2 ScreenSize;
 	private SpawnerManager Manager;
+	private HealthDisplayer HealthDisp;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
@@ -18,7 +19,12 @@ public class Player : Actor {
 
 		Health = 100;
 		ScreenSize = GetViewportRect().Size;
-		Manager = (SpawnerManager) GetTree().Root.GetChild(0).GetNode("SpawnerManager");
+
+		Node scene = GetTree().Root.GetChild(0);
+		Manager = (SpawnerManager) scene.GetNode("SpawnerManager");
+		HealthDisp = (HealthDisplayer) scene.GetNode("PlayerHealthBar");
+		HealthDisp.SetMaxHealth(Health);
+		HealthDisp.SetCurrentHealth(Health);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -58,10 +64,17 @@ public class Player : Actor {
 		Health -= d;
 		GD.Print("Current Health = ", Health);
 		if (Health <= 0) {
-			// GD.Print("Game Over");
+			Health = 0;		// just to make sure this is non-negative
 			IsDeath = true;
 			Manager.GameOver();
 		}
+		HealthDisp.SetCurrentHealth(Health);
+	}
+
+	public void Heal(int d) {
+		Health += d;
+		if (Health > 100) Health = 100;
+		HealthDisp.SetCurrentHealth(Health);
 	}
 
 	/** @ tools */
