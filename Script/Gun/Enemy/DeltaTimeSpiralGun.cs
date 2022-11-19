@@ -32,6 +32,7 @@ public class DeltaTimeSpiralGun : GunAdv {
 			String.Format("res://Asset/Object/Bullet/Enemy/{0}.tscn", BulletSprite)
 		);
 		AngleDiff = AngleDiff / 180 * (float) PI;
+		FirstBulletAlpha = FirstBulletAlpha / 180 * (float) PI;
 	}
 
 	public override void _Process(float d) {
@@ -75,5 +76,14 @@ public class DeltaTimeSpiralGun : GunAdv {
 			bullet.Position = FiredLoc;
 		else
 			bullet.Position = this.GlobalPosition;
+		
+		bullet.Position = GetInitPosition(bullet, alpha);
+	}
+
+	protected virtual Vector2 GetInitPosition(BulletAdv bullet, double alpha) {
+		return new Vector2(
+			bullet.Position.x + Speed * InitTravel * (float) Cos(alpha),
+			bullet.Position.y + Speed * InitTravel * (float) Sin(alpha)
+		);
 	}
 }

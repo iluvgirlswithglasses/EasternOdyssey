@@ -167,6 +167,33 @@ XAcceleration = 5.0
 YAcceleration = 10.0
 YDistance = 0.0
 
+[node name="VertexFairy-07-00" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 1050, 100 )
+EnemyCount = 1
+EnemyDir = "VertexFairy"
+Health = 120
+FireRate = 6.0
+GunDelta = 3.5
+
+[node name="VertexFairy-07-01" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 1050, 500 )
+EnemyCount = 1
+EnemyDir = "VertexFairyReverse"
+Health = 120
+FireRate = 6.0
+GunDelta = 3.5
+
+[node name="ShotgunFairy-07-02" parent="SpawnerManager" instance=ExtResource( 4 )]
+position = Vector2( 1080, 300 )
+EnemyCount = 1
+SpawnRate = 1.0
+WaitTime = 4.0
+EnemyDir = "ShotgunFairy"
+Health = 75
+FireRate = 1.5
+RelativeToPlayer = 0
+YDistance = 0.0
+
 [node name="FireFairy-03-00" parent="SpawnerManager" instance=ExtResource( 3 )]
 position = Vector2( 900, 0 )
 EnemyCount = 4

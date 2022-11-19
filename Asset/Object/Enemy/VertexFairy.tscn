@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprite/RawSource/jerom-spaceship.png" type="Texture" id=1]
+[ext_resource path="res://Script/Enemy/VertexFairy.cs" type="Script" id=2]
+[ext_resource path="res://Script/Gun/Enemy/DeltaTimeSpiralGun.cs" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 41, 37 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" groups=["Enemy"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
+scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 264.328, 144.965, 52.35, 59.6272 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Gun" type="Node2D" parent="."]
+position = Vector2( -40, 0 )
+script = ExtResource( 3 )
+FireRate = 12.5
+Delta = 10.0
+BulletSprite = "ClownpieceSpiralBullet"
+Speed = 175.0
+Acceleration = 25.0
+RotateSpeed = 0.2
+BulletsPerShot = 432
+BulletDelta = 0.02
+AngleDiff = 10.0
+FixedLocation = true
+InitTravel = 0.2
+FirstBulletAlpha = -180.0

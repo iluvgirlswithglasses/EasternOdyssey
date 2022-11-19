@@ -33,6 +33,8 @@ public class Clownpiece : VeloMovementEnemy {
 		};
 		// healthbar
 		healthDisp = (HealthDisplayer) GetTree().Root.GetChild(0).GetNode("BossHealthBar");
+		healthDisp.SetMaxHealth(Health);
+		healthDisp.SetCurrentHealth(Health);
 		healthDisp.SetLabel("BOSS: ");
 		healthDisp.Visible = true;
 	}
