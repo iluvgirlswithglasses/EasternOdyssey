@@ -18,4 +18,9 @@ public class GameOverDisplayer : Control {
 	private void _on_Retry_button_down() {
 		manager.Retry();
 	}
+
+	private void _on_Title_button_down() {
+		PickupMusic.D = 0f;	// turn off current stage's music
+		GetTree().ChangeScene("res://Asset/TitleScene/TitleScene.tscn");
+	}
 }
