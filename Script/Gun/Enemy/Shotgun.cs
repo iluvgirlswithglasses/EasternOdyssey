@@ -5,11 +5,11 @@ using static System.Math;
 public class Shotgun : SpiralGun {
 	[Export]
 	public double DegDirection = -180;
-	public double Direction;
+	protected double Direction;
 	[Export]
 	public double BulletSpanDeg = 30;
-	public double BulletSpan;
-	public double BulletGap;
+	protected double BulletSpan;
+	protected double BulletGap;
 	[Export]
 	public bool RelativeToPlayer = false;
 
