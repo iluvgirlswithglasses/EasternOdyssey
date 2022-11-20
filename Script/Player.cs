@@ -68,6 +68,7 @@ public class Player : Actor {
 		if (Health <= 0) {
 			Health = 0;		// just to make sure this is non-negative
 			IsDeath = true;
+			SummonExplosion();
 			// remove all child nodes
 			foreach (Node i in GetChildren())
 				this.RemoveChild(i);
