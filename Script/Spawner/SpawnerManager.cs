@@ -144,12 +144,11 @@ public class SpawnerManager : Node2D {
 		Scene.GetNode<Control>("PlayerHealthBar").Visible = false;
 		Scene.GetNode<Control>("BossHealthBar").Visible = false;
 		// 
-		if (++PickupLevel.CurrentLevel > PickupLevel.FinalLevel) {
+		if (PickupLevel.CurrentLevel == PickupLevel.FinalLevel) {
 			// the player won the game
 
 			// if the player pressed "continue" on the title scene
 			// the last level will be played
-			PickupLevel.CurrentLevel--;
 		} else {
 			// go to next stage
 			Scene.GetNode<Control>("NextStageDisplayer").Visible = true;

@@ -1,17 +1,17 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Script/Enemy/PyroButterfly.cs" type="Script" id=1]
+[ext_resource path="res://Script/Enemy/CryoButterfly.cs" type="Script" id=1]
 [ext_resource path="res://Sprite/RawSource/EnemySheet.png" type="Texture" id=2]
 [ext_resource path="res://Script/Gun/Enemy/SpiralShotgun.cs" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.5, 31 )
 
-[node name="PyroButterfly" type="KinematicBody2D" groups=["Enemy"]]
+[node name="CryoButterfly" type="KinematicBody2D" groups=["Enemy"]]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 1 )
-Point = 100
+Point = 150
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0.5, 0 )
@@ -25,14 +25,27 @@ texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 90.4407, 489.985, 64.1512, 28.3855 )
 
-[node name="Gun" type="Node2D" parent="."]
+[node name="Gun1" type="Node2D" parent="."]
 script = ExtResource( 3 )
 GunCount = 6
-FireRate = 2.0
-Delta = 1.0
-BulletSprite = "ButterflyBulletRed"
+FireRate = 4.0
+Delta = 1.5
+BulletSprite = "ButterflyBulletBlue"
 Damage = 10
 Speed = 100.0
+Acceleration = 35.0
+BulletsPerSpan = 15
+BulletSpanDeg = 35.0
+
+[node name="Gun2" type="Node2D" parent="."]
+script = ExtResource( 3 )
+GunCount = 6
+FirstGunDirectionDeg = -210.0
+FireRate = 4.0
+Delta = 2.5
+BulletSprite = "ButterflyBulletBlue"
+Damage = 10
+Speed = 75.0
 Acceleration = 10.0
-BulletsPerSpan = 7
-BulletSpanDeg = 40.0
+BulletsPerSpan = 15
+BulletSpanDeg = 35.0

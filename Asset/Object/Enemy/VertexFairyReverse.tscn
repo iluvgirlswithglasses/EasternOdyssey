@@ -11,6 +11,7 @@ extents = Vector2( 34, 37 )
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 2 )
+Point = 100
 
 [node name="Sprite" type="Sprite" parent="."]
 rotation = 1.5708
