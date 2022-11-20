@@ -196,7 +196,7 @@ EnemyCount = 1
 SpawnRate = 1.0
 WaitTime = 4.0
 EnemyDir = "ShotgunFairy"
-Health = 75
+Health = 100
 FireRate = 1.5
 RelativeToPlayer = 0
 YDistance = 0.0
@@ -215,7 +215,7 @@ YDirection = -1
 
 [node name="WindFairySA-06-00" parent="SpawnerManager" instance=ExtResource( 4 )]
 position = Vector2( 1024, 575 )
-EnemyCount = 4
+EnemyCount = 5
 SpawnRate = 1.0
 EnemyDir = "WindFairySingleAction"
 Health = 4
@@ -231,7 +231,7 @@ YDistance = 0.0
 
 [node name="WindFairySA-06-01" parent="SpawnerManager" instance=ExtResource( 4 )]
 position = Vector2( 1024, 15 )
-EnemyCount = 4
+EnemyCount = 5
 SpawnRate = 1.0
 EnemyDir = "WindFairySingleAction"
 Health = 4

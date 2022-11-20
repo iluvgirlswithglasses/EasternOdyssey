@@ -126,7 +126,7 @@ YDistance = 0.0
 
 [node name="WindFairy-02-00" parent="SpawnerManager" instance=ExtResource( 6 )]
 position = Vector2( 1035, 75 )
-EnemyCount = 7
+EnemyCount = 6
 SpawnRate = 0.25
 EnemyDir = "WindFairy"
 Health = 3
@@ -137,7 +137,7 @@ ForwardTime = 1.0
 
 [node name="WindFairy-02-01" parent="SpawnerManager" instance=ExtResource( 6 )]
 position = Vector2( 1035, 75 )
-EnemyCount = 7
+EnemyCount = 6
 SpawnRate = 0.25
 WaitTime = 8.5
 EnemyDir = "WindFairy"

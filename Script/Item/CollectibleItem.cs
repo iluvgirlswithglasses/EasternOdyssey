@@ -10,7 +10,7 @@ public abstract class CollectibleItem : KinematicBody2D {
     public float Acceleration = -75f;
 
     public override void _Ready() {
-        this.Layers = Constants.PLAYER_LAYER;
+        this.Layers = Constants.NO_LAYER;
         this.CollisionLayer = Constants.PLAYER_LAYER;
         Scene = GetTree().Root.GetChild(0);
         PlayerObj = (Player) Scene.GetNode("Player");

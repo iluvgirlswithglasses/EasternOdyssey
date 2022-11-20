@@ -7,8 +7,9 @@
 extents = Vector2( 48, 48 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
+collision_layer = 0
 script = ExtResource( 2 )
-HealValue = 20
+HealValue = 15
 
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.75, 0.75 )
