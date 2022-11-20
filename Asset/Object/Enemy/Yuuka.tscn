@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Script/Enemy/Yuuka.cs" type="Script" id=1]
 [ext_resource path="res://Sprite/Object/Enemy/Yuuka.png" type="Texture" id=2]
 [ext_resource path="res://Script/Gun/Enemy/Yuuka/YuukaSpiralGun.cs" type="Script" id=3]
+[ext_resource path="res://Script/Gun/Enemy/Shotgun.cs" type="Script" id=4]
+[ext_resource path="res://Script/Gun/Enemy/Clownpiece/ClownpieceSpiralGun.cs" type="Script" id=5]
 
 [node name="Yuuka" type="KinematicBody2D" groups=["Enemy"]]
 collision_layer = 0
@@ -10,7 +12,6 @@ collision_mask = 2
 script = ExtResource( 1 )
 Health = 1200
 Point = 1000
-RotateSpeed = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -66, 37.6667, -59.3333, 15.6667, -49.3333, 1.33333, -50, -5.33333, -60, -20.3333, -66, -44, -56, -53.6667, -40.6667, -59.6667, -45.6667, -72.6667, -49.3333, -88, -32.3333, -104.333, -10.6667, -115.333, 9.33333, -115, 34.6667, -116.333, 38, -113, 41, -78, 61.6667, -33.3333, 62, 32, 40, 78, 38, 110.333, 34.6667, 114.667, 6.66667, 112.667, -11.3333, 113.333, -33.3333, 101, -48.6667, 86, -43.6667, 66.6667, -39.3333, 63.6667, -39.3333, 55.6667, -58, 49 )
@@ -29,7 +30,7 @@ SpiralCount = 10
 SpiralAngleDiff = 1.0
 SpiralTimeDiff = 0.2
 FixedLocation = true
-FireRate = 6.0
+FireRate = 4.5
 Speed = 100.0
 Acceleration = 10.0
 RotateSpeed = 0.2
@@ -42,7 +43,67 @@ SpiralCount = 10
 SpiralAngleDiff = -1.0
 SpiralTimeDiff = 0.2
 FixedLocation = true
-FireRate = 6.0
+FireRate = 4.5
 Speed = 100.0
 Acceleration = 10.0
 RotateSpeed = -0.2
+
+[node name="Shotgun0" type="Node2D" parent="GunSet0"]
+script = ExtResource( 4 )
+FireRate = 2.25
+Delta = -0.5
+BulletSprite = "ClownpieceSpiralBulletBlue"
+Speed = 10.0
+Acceleration = 250.0
+RotateSpeed = 0.0
+BulletsPerShot = 10
+BulletSpanDeg = 16.0
+RelativeToPlayer = true
+
+[node name="GunSet1" type="Node2D" parent="."]
+
+[node name="SpiralGun2A" type="Node2D" parent="GunSet1"]
+position = Vector2( -40, 0 )
+script = ExtResource( 5 )
+FireRate = 6.0
+Delta = 0.5
+BulletSprite = "ClownpieceSpiralBulletBlue"
+RotateSpeed = -1.0
+
+[node name="UpwardSpiralGun0" type="Node2D" parent="GunSet1"]
+position = Vector2( -40, 0 )
+script = ExtResource( 3 )
+BulletSprite = "ButterflyBulletRed"
+SpiralCount = 10
+SpiralAngleDiff = 1.0
+SpiralTimeDiff = 0.2
+FixedLocation = true
+FireRate = 4.5
+Speed = 100.0
+Acceleration = 10.0
+RotateSpeed = 0.2
+
+[node name="DownwardSpiralGun0" type="Node2D" parent="GunSet1"]
+position = Vector2( -40, 0 )
+script = ExtResource( 3 )
+BulletSprite = "ButterflyBulletRed"
+SpiralCount = 10
+SpiralAngleDiff = -1.0
+SpiralTimeDiff = 0.2
+FixedLocation = true
+FireRate = 4.5
+Speed = 100.0
+Acceleration = 10.0
+RotateSpeed = -0.2
+
+[node name="Shotgun0" type="Node2D" parent="GunSet1"]
+script = ExtResource( 4 )
+FireRate = 2.25
+Delta = -0.5
+BulletSprite = "ClownpieceSpiralBulletBlue"
+Speed = 10.0
+Acceleration = 250.0
+RotateSpeed = 0.0
+BulletsPerShot = 10
+BulletSpanDeg = 16.0
+RelativeToPlayer = true
