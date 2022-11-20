@@ -11,6 +11,7 @@ public class MoonRabit : VeloMovementEnemy {
 	private HealthDisplayer healthDisp;
 
 	public override void _Ready() {
+		base._Ready();
 		f = (d) => {
 			// the first 3 seconds
 			if (d < 3.0) {

@@ -14,6 +14,7 @@ public class Clownpiece : VeloMovementEnemy {
 	private HealthDisplayer healthDisp;
 
 	public override void _Ready() {
+		base._Ready();
 		// some guns that are disabled by default
 		pistol1 = GetNode<IceFairyGun>("PistolGun1");
 		pistol2 = GetNode<IceFairyGun>("PistolGun2");

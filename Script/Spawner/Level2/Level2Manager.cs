@@ -16,6 +16,10 @@ public class Level2Manager : SpawnerManager {
 		AddPhase(new List<string>(){"VertexFairy-07-00", "VertexFairy-07-01", "ShotgunFairy-07-02"});
 		AddPhase(new List<string>(){"ClownpieceSpawner", "ClownpieceSupportSpawner-00", "ClownpieceSupportSpawner-01"});
 		base._Ready();
+		
+		Collectible = new List<string>(){
+			"HealingItem", "", "", "", "HealingItem", "", "", "HealingItem", "",
+		};
 
 		// Pierrot of the Star-Spangled Banner 
 		AudioStreamMP3 stream = (AudioStreamMP3) GD.Load("res://Audio/Background/Clownpiece.mp3");

@@ -4,10 +4,12 @@ using System.Collections.Generic;
 
 // this class should have been named "Level manager" tbh
 
-public class SpawnerManager : Node {
+public class SpawnerManager : Node2D {
 	
 	// Stage[i]: All Spawner of a Phase
 	public List<List<Spawner>> Stage = new List<List<Spawner>>();
+	// Collectible[i]: The item dropped to player once they've finish Phase[i]
+	public List<string> Collectible;
 
 	public int CurrentPhase;
 	private bool IsGameOver = false;
@@ -27,12 +29,14 @@ public class SpawnerManager : Node {
 	private Actor Player;
 	private StatDisplayer Stat;
 
+	private Vector2 ScreenSize;
 	protected Node Scene;
 	protected AudioStreamPlayer AudioPlayer;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		CurrentPhase = -1;
+		ScreenSize = GetViewportRect().Size;
 		Scene = GetTree().Root.GetChild(0);
 		AudioPlayer = (AudioStreamPlayer) GetTree().Root.GetChild(0).GetNode("BackgroundMusicPlayer");
 		Player = (Actor) Scene.GetNode("Player");
@@ -75,6 +79,19 @@ public class SpawnerManager : Node {
 			Stat.TotalPoint.Text = StagePoint.ToString();
 
 			Stat.Display();
+
+			// spawn collectible
+			if (Collectible[CurrentPhase] != "") {
+				PackedScene itemScene = (PackedScene) GD.Load(
+					string.Format("res://Asset/Object/Collectible/{0}.tscn", Collectible[CurrentPhase])
+				);
+				CollectibleItem item = (CollectibleItem) itemScene.Instance();
+				Scene.AddChild(item);
+				item.Position = new Vector2(
+					ScreenSize.x * 2 / 3,
+					ScreenSize.y / 2
+				);
+			}
 
 			// reset & move to next phase
 			NextPhase();

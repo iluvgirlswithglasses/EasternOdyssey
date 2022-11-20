@@ -17,6 +17,10 @@ public class Level1Manager : SpawnerManager {
 		AddPhase(new List<string>(){"MoonRabitSpawner"});
 		base._Ready();
 
+		Collectible = new List<string>(){
+			"", "", "HealingItem", "", "", "HealingItem", "HealingItem", "",
+		};
+
 		// The Space Shrine Maiden Appears
 		AudioStreamMP3 stream = (AudioStreamMP3) GD.Load("res://Audio/Background/Stage1.mp3");
 		AudioPlayer.Stream = stream;

@@ -12,6 +12,7 @@ public partial class TitleScene : Control {
 		backgroundPlayer = (AudioStreamPlayer) GetNode("BackgroundMusicPlayer");
 		effectPlayer = (AudioStreamPlayer) GetNode("EffectPlayer");
 
+		// Scarlet Beyond a Crimson Dream 
 		AudioStreamMP3 stream = (AudioStreamMP3) GD.Load("res://Audio/Background/TitleScene.mp3");
 		backgroundPlayer.Stream = stream;
 		backgroundPlayer.Play();

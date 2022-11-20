@@ -22,8 +22,6 @@ public class VeloMovementEnemy : Actor {
 		// because if they do, they will collide with each others
 		Layers = Constants.NO_LAYER;
 		CollisionMask = Constants.ENEMY_LAYER;
-
-		AddCollisionExceptionWith(this);
 	}
 
 	public override void _Process(float delta) {
