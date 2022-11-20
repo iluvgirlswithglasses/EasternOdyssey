@@ -258,10 +258,11 @@ YDistance = 0.0
 
 [node name="IceFairy-05-02" parent="SpawnerManager" instance=ExtResource( 11 )]
 position = Vector2( 1050, 550 )
-EnemyCount = 1
+EnemyCount = 2
 WaitTime = 6.0
 Health = 8
 XForwardSpeed = -100.0
+YDistance = -75.0
 
 [node name="CryoButterfly-06-00" parent="SpawnerManager" instance=ExtResource( 11 )]
 position = Vector2( 875, -20 )
