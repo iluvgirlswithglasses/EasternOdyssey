@@ -8,6 +8,7 @@ public class Level3Manager : SpawnerManager {
 
 		PickupLevel.CurrentLevel = 3;
 		
+		AddPhase(new List<string>(){"YuukaSpawner"});
 		AddPhase(new List<string>(){"PyroButterfly-00-00", "FireFairy-00-01"});
 		AddPhase(new List<string>(){"LightFairy-01-00", "LightFairy-01-01", "LightFairy-01-02", "LightFairy-01-03", "ShotgunFairy-01-04"});	// heal
 		AddPhase(new List<string>(){"FireFairy-02-00", "WindFairy-02-01", "LightFairy-02-02"});

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/title-sprite.png-89b1a63e5c51265c5e9ee7c5c931f0b8.stex"
+path="res://.import/Yuuka.png-15fb4fcf95fa3268c7e389e54927feb5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprite/Background/title-sprite.png"
-dest_files=[ "res://.import/title-sprite.png-89b1a63e5c51265c5e9ee7c5c931f0b8.stex" ]
+source_file="res://Sprite/Object/Enemy/Yuuka.png"
+dest_files=[ "res://.import/Yuuka.png-15fb4fcf95fa3268c7e389e54927feb5.stex" ]
 
 [params]
 
