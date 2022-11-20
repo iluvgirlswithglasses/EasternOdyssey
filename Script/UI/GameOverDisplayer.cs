@@ -3,11 +3,13 @@ using System;
 
 public class GameOverDisplayer : Control {
 
-	SpawnerManager manager;
+	private	SpawnerManager manager;
+	public Label Score;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		manager = (SpawnerManager) GetTree().Root.GetChild(0).GetNode("SpawnerManager");
+		Score = GetNode<Control>("VBoxContainer").GetNode<Label>("Score");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -167,6 +167,7 @@ public class SpawnerManager : Node2D {
 		//
 		GameOverDisplayer displayer = (GameOverDisplayer) Scene.GetNode("GameOverDisplayer");
 		displayer.Visible = true;
+		displayer.Score.Text = String.Format("Score: {0}", StagePoint + PhasePoint);
 		IsGameOver = true;
 		AudioPlayer.VolumeDb = -12;
 	}
