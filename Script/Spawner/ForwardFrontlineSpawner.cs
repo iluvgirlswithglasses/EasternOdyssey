@@ -6,8 +6,8 @@ public partial class ForwardFrontlineSpawner : Spawner {
 
 	[Export] public string EnemyDir = "IceFairy";
 	[Export] public int Health;
-    [Export] public float FireRate = 1.25f;
-    [Export] public float GunDelta = 0f;
+	[Export] public float FireRate = 1.25f;
+	[Export] public float GunDelta = 0f;
 
 	[Export] public int RelativeToPlayer = 1;
 
@@ -19,14 +19,14 @@ public partial class ForwardFrontlineSpawner : Spawner {
 	[Export] public float XAcceleration = 0f;
 	[Export] public float YAcceleration = 0f;
 
-    [Export] public float YDistance = 75f;   // y distance between each enemy in this frontline
-    [Export] public float TDistance = 0f;    // time distance ----
+	[Export] public float YDistance = 75f;   // y distance between each enemy in this frontline
+	[Export] public float TDistance = 0f;    // time distance ----
 
-    protected int SpawnCount = 0;
+	protected int SpawnCount = 0;
 
 	public override void _Ready() {
 		base._Ready();
-        EnemyScene = (PackedScene) GD.Load(string.Format("res://Asset/Object/Enemy/{0}.tscn", EnemyDir));
+		EnemyScene = (PackedScene) GD.Load(string.Format("res://Asset/Object/Enemy/{0}.tscn", EnemyDir));
 	}
 
 	protected override void Spawn() {
@@ -38,7 +38,7 @@ public partial class ForwardFrontlineSpawner : Spawner {
 			enemy.Point = Point;
 
 		enemy.f = (d) => {
-            float localForwardTime = ForwardTime + TDistance * SpawnCount;
+			float localForwardTime = ForwardTime + TDistance * SpawnCount;
 			if (d <= localForwardTime) {
 				// the speed of this object is changed by a Cos() function
 				float a = (float) Cos(Theta * (d / localForwardTime) * PI / 2);
@@ -53,15 +53,15 @@ public partial class ForwardFrontlineSpawner : Spawner {
 		// add
 		Scene.AddChild(enemy);
 		enemy.Position = new Vector2(
-            GlobalPosition.x, 
-            GlobalPosition.y + SpawnCount*YDistance
-        );
+			GlobalPosition.x, 
+			GlobalPosition.y + SpawnCount*YDistance
+		);
 
-        // these are only called when Gun Node is loaded
-        enemy.ChangeFireRate(FireRate);
-        enemy.ChangeGunDelta(GunDelta);
+		// these are only called when Gun Node is loaded
+		enemy.ChangeFireRate(FireRate);
+		enemy.ChangeGunDelta(GunDelta);
 		enemy.ChangeRelativeToPlayer(RelativeToPlayer);
 
-        SpawnCount++;
+		SpawnCount++;
 	}
 }

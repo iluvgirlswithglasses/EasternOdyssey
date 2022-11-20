@@ -1,0 +1,91 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Asset/UI/GameOverDisplayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Asset/UI/HealthBar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Asset/UI/NextStageDisplayer.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Asset/UI/StatDisplayer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Asset/Object/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Font/BRLNSR.TTF" type="DynamicFontData" id=6]
+[ext_resource path="res://Script/UI/GreetingScene.cs" type="Script" id=7]
+[ext_resource path="res://Script/Spawner/Level3/Level3Manager.cs" type="Script" id=8]
+[ext_resource path="res://Sprite/Background/Stage3.png" type="Texture" id=9]
+[ext_resource path="res://Asset/Spawner/ForwardFrontlineSpawner.tscn" type="PackedScene" id=11]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[node name="Level3" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+scale = Vector2( 1.15, 1.15 )
+texture = ExtResource( 9 )
+
+[node name="PlayerHealthBar" parent="." instance=ExtResource( 2 )]
+margin_left = 25.0
+margin_top = 550.0
+margin_right = 25.0
+margin_bottom = 550.0
+
+[node name="BossHealthBar" parent="." instance=ExtResource( 2 )]
+visible = false
+margin_left = 600.0
+margin_top = 20.0
+margin_right = 600.0
+margin_bottom = 20.0
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 175, 300 )
+
+[node name="SpawnerManager" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="PyroButterfly-00-00" parent="SpawnerManager" instance=ExtResource( 11 )]
+position = Vector2( 1050, 150 )
+EnemyCount = 2
+EnemyDir = "PyroButterfly"
+Health = 75
+YDistance = 300.0
+
+[node name="FireFairy-00-01" parent="SpawnerManager" instance=ExtResource( 11 )]
+position = Vector2( 1050, 300 )
+EnemyCount = 1
+WaitTime = 3.0
+EnemyDir = "FireFairy"
+Health = 15
+FireRate = 1.5
+ForwardTime = 1.0
+
+[node name="StatDisplayer" parent="." instance=ExtResource( 4 )]
+visible = false
+
+[node name="GameOverDisplayer" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="NextStageDisplayer" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="StageGreeter" type="CenterContainer" parent="."]
+visible = false
+margin_left = 100.0
+margin_top = 100.0
+margin_right = 850.0
+margin_bottom = 219.0
+script = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="StageGreeter"]
+margin_right = 750.0
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 1 )
+text = "Stage 3:
+Mountain of Faith        "
+
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="UIEffectPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="GunEffectPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ExplosionPlayer" type="AudioStreamPlayer" parent="."]
