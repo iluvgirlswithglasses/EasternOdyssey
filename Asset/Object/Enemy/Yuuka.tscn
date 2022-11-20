@@ -10,7 +10,7 @@
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 1 )
-Health = 1200
+Health = 1000
 Point = 1000
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -60,50 +60,10 @@ BulletsPerShot = 10
 BulletSpanDeg = 16.0
 RelativeToPlayer = true
 
-[node name="GunSet1" type="Node2D" parent="."]
-
-[node name="SpiralGun2A" type="Node2D" parent="GunSet1"]
+[node name="FurryGun" type="Node2D" parent="."]
 position = Vector2( -40, 0 )
 script = ExtResource( 5 )
 FireRate = 6.0
 Delta = 0.5
 BulletSprite = "ClownpieceSpiralBulletBlue"
 RotateSpeed = -1.0
-
-[node name="UpwardSpiralGun0" type="Node2D" parent="GunSet1"]
-position = Vector2( -40, 0 )
-script = ExtResource( 3 )
-BulletSprite = "ButterflyBulletRed"
-SpiralCount = 10
-SpiralAngleDiff = 1.0
-SpiralTimeDiff = 0.2
-FixedLocation = true
-FireRate = 4.5
-Speed = 100.0
-Acceleration = 10.0
-RotateSpeed = 0.2
-
-[node name="DownwardSpiralGun0" type="Node2D" parent="GunSet1"]
-position = Vector2( -40, 0 )
-script = ExtResource( 3 )
-BulletSprite = "ButterflyBulletRed"
-SpiralCount = 10
-SpiralAngleDiff = -1.0
-SpiralTimeDiff = 0.2
-FixedLocation = true
-FireRate = 4.5
-Speed = 100.0
-Acceleration = 10.0
-RotateSpeed = -0.2
-
-[node name="Shotgun0" type="Node2D" parent="GunSet1"]
-script = ExtResource( 4 )
-FireRate = 2.25
-Delta = -0.5
-BulletSprite = "ClownpieceSpiralBulletBlue"
-Speed = 10.0
-Acceleration = 250.0
-RotateSpeed = 0.0
-BulletsPerShot = 10
-BulletSpanDeg = 16.0
-RelativeToPlayer = true

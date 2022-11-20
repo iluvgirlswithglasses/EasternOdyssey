@@ -6,7 +6,9 @@ public class Yuuka : VeloMovementEnemy {
 
 	private HealthDisplayer healthDisp;
 	private int phase = 0;
-	private int[] Thresholds = {900, 0};
+
+	[Export] public int FurryThreshold = 400;
+	protected SpiralGun FurryGun;
 
 	public override void _Ready() {
 		base._Ready();
@@ -27,10 +29,8 @@ public class Yuuka : VeloMovementEnemy {
 		healthDisp.Visible = true;
 		
 		// phases
-		for (int i = 0; i < Thresholds.GetLength(0); i++) {
-			SetGunSetState(i, false);
-		}
-		SetGunSetState(0, true);
+		FurryGun = GetNode<SpiralGun>("FurryGun");
+		FurryGun.SetProcess(false);
 	}
 
 	public override void TakeDamage(int d) {
@@ -39,20 +39,12 @@ public class Yuuka : VeloMovementEnemy {
 		if (Health <= 0)
 			return;
 		// 
-		if (Health <= Thresholds[phase]) {
-			SetGunSetState(phase, false);
-			phase++;
-			SetGunSetState(phase, true);
+		if (Health <= FurryThreshold) {
+			FurryGun.SetProcess(true);
 		}
 	}
 
 	public override void ProcessOutOfScreen() {
 		// do nothing
-	}
-
-	protected void SetGunSetState(int i, bool state) {
-		foreach (Node2D node in GetNode<Node2D>(string.Format("GunSet{0}", i)).GetChildren()) {
-			node.SetProcess(state);
-		}
 	}
 }
