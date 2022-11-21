@@ -10,6 +10,9 @@ public class Yuuka : VeloMovementEnemy {
 	[Export] public int FurryThreshold = 400;
 	protected SpiralGun FurryGun;
 
+	private AudioStreamMP3 DeathSE = (AudioStreamMP3) GD.Load("res://Audio/SE/BossDeath.mp3");
+	private AudioStreamPlayer SEPlayer;
+
 	public override void _Ready() {
 		base._Ready();
 		f = (d) => {
@@ -31,6 +34,10 @@ public class Yuuka : VeloMovementEnemy {
 		// phases
 		FurryGun = GetNode<SpiralGun>("FurryGun");
 		FurryGun.SetProcess(false);
+
+		//
+		DeathSE.Loop = false;
+		SEPlayer = GetTree().Root.GetChild(0).GetNode<AudioStreamPlayer>("ExplosionPlayer");
 	}
 
 	public override void TakeDamage(int d) {
@@ -42,6 +49,11 @@ public class Yuuka : VeloMovementEnemy {
 		if (Health <= FurryThreshold) {
 			FurryGun.SetProcess(true);
 		}
+	}
+
+	public override void AnnounceKill() {
+		SEPlayer.Stream = DeathSE;
+		SEPlayer.Play();
 	}
 
 	public override void ProcessOutOfScreen() {

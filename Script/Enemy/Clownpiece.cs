@@ -13,6 +13,9 @@ public class Clownpiece : VeloMovementEnemy {
 	private IceFairyGun pistol2;
 	private HealthDisplayer healthDisp;
 
+	private AudioStreamMP3 DeathSE = (AudioStreamMP3) GD.Load("res://Audio/SE/BossDeath.mp3");
+	private AudioStreamPlayer SEPlayer;
+
 	public override void _Ready() {
 		base._Ready();
 		// some guns that are disabled by default
@@ -38,6 +41,10 @@ public class Clownpiece : VeloMovementEnemy {
 		healthDisp.SetCurrentHealth(Health);
 		healthDisp.SetLabel("BOSS: ");
 		healthDisp.Visible = true;
+
+		//
+		DeathSE.Loop = false;
+		SEPlayer = GetTree().Root.GetChild(0).GetNode<AudioStreamPlayer>("ExplosionPlayer");
 	}
 
 	public override void TakeDamage(int d) {
@@ -47,6 +54,11 @@ public class Clownpiece : VeloMovementEnemy {
 			pistol2.SetProcess(true);
 		}
 		healthDisp.SetCurrentHealth(Health);
+	}
+
+	public override void AnnounceKill() {
+		SEPlayer.Stream = DeathSE;
+		SEPlayer.Play();
 	}
 
 	public override void ProcessOutOfScreen() {

@@ -10,6 +10,9 @@ public class MoonRabit : VeloMovementEnemy {
 
 	private HealthDisplayer healthDisp;
 
+	private AudioStreamMP3 DeathSE = (AudioStreamMP3) GD.Load("res://Audio/SE/BossDeath.mp3");
+	private AudioStreamPlayer SEPlayer;
+
 	public override void _Ready() {
 		base._Ready();
 		f = (d) => {
@@ -30,11 +33,20 @@ public class MoonRabit : VeloMovementEnemy {
 		healthDisp.SetCurrentHealth(Health);
 		healthDisp.SetLabel("BOSS: ");
 		healthDisp.Visible = true;
+
+		//
+		DeathSE.Loop = false;
+		SEPlayer = GetTree().Root.GetChild(0).GetNode<AudioStreamPlayer>("ExplosionPlayer");
 	}
 
 	public override void TakeDamage(int d) {
 		base.TakeDamage(d);
 		healthDisp.SetCurrentHealth(Health);
+	}
+
+	public override void AnnounceKill() {
+		SEPlayer.Stream = DeathSE;
+		SEPlayer.Play();
 	}
 
 	public override void ProcessOutOfScreen() {

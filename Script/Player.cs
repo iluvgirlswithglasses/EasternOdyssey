@@ -10,6 +10,9 @@ public class Player : Actor {
 	private SpawnerManager Manager;
 	private HealthDisplayer HealthDisp;
 
+	private AudioStreamMP3 DeathSE = (AudioStreamMP3) GD.Load("res://Audio/SE/PlayerDeath.mp3");
+	private AudioStreamPlayer SEPlayer;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		base._Ready();
@@ -25,6 +28,9 @@ public class Player : Actor {
 		HealthDisp = (HealthDisplayer) scene.GetNode("PlayerHealthBar");
 		HealthDisp.SetMaxHealth(Health);
 		HealthDisp.SetCurrentHealth(Health);
+
+		DeathSE.Loop = false;
+		SEPlayer = GetTree().Root.GetChild(0).GetNode<AudioStreamPlayer>("ExplosionPlayer");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -69,6 +75,8 @@ public class Player : Actor {
 			Health = 0;		// just to make sure this is non-negative
 			IsDeath = true;
 			SummonExplosion();
+			SEPlayer.Stream = DeathSE;
+			SEPlayer.Play();
 			// remove all child nodes
 			foreach (Node i in GetChildren())
 				this.RemoveChild(i);

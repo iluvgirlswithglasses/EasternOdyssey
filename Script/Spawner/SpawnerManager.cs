@@ -43,9 +43,9 @@ public class SpawnerManager : Node2D {
 
 		AudioPlayer = (AudioStreamPlayer) Scene.GetNode("BackgroundMusicPlayer");
 		GunEffectPlayer = (AudioStreamPlayer) Scene.GetNode("GunEffectPlayer");
-		GunEffectPlayer.VolumeDb = -2;
+		GunEffectPlayer.VolumeDb = -8;
 		ExplosionPlayer = (AudioStreamPlayer) Scene.GetNode("ExplosionPlayer");
-		ExplosionPlayer.VolumeDb = -2;
+		ExplosionPlayer.VolumeDb = -3;
 
 		Player = (Actor) Scene.GetNode("Player");
 		Stat = (StatDisplayer) Scene.GetNode("StatDisplayer");

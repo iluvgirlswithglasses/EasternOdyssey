@@ -10,6 +10,7 @@ public class Level1Manager : SpawnerManager {
 		PickupLevel.CurrentLevel = 1;
 		PickupLevel.SaveLevelToFile();
 
+		AddPhase(new List<string>(){"MoonRabitSpawner"});
 		AddPhase(new List<string>(){"LightFairy-00-00", "LightFairy-00-01"});
 		AddPhase(new List<string>(){"WindFairy-01-00", "LightFairy-01-01", "LightFairy-01-02"});
 		AddPhase(new List<string>(){"WindFairy-02-00", "WindFairy-02-01", "LightFairy-02-02"});	// heal
