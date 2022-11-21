@@ -44,6 +44,13 @@ public class SpawnerManager : Node2D {
 		NextPhase();
 	}
 
+	// this is mostly used for checking user input
+	public override void _Process(float delta) {
+		if (Input.IsActionJustPressed("restart_level")) {
+			Retry();
+		}
+	}
+
 	/** @ basic */
 	// player's kill count
 	public void CountKill(int pts) {

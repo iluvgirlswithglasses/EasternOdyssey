@@ -7,6 +7,7 @@ public partial class TitleScene : Control {
 	private AudioStreamPlayer backgroundPlayer;
 	private AudioStreamPlayer effectPlayer;
 
+	private Node2D title;
 	private Control menu;
 	private Control tutor;
 
@@ -21,6 +22,7 @@ public partial class TitleScene : Control {
 		backgroundPlayer.Play();
 
 		// open menu, hide tutorial
+		title = GetNode<Node2D>("Title");
 		menu = GetNode<Control>("Menu");
 		tutor = GetNode<Control>("Tutorial");
 		HideTutorial();
@@ -40,11 +42,13 @@ public partial class TitleScene : Control {
 	}
 
 	public void ViewTutorial() {
+		title.Visible = false;
 		menu.Visible = false;
 		tutor.Visible = true;
 	}
 
 	public void HideTutorial() {
+		title.Visible = true;
 		menu.Visible = true;
 		tutor.Visible = false;
 	}
