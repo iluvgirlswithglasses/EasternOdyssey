@@ -7,6 +7,9 @@ public partial class TitleScene : Control {
 	private AudioStreamPlayer backgroundPlayer;
 	private AudioStreamPlayer effectPlayer;
 
+	private Control menu;
+	private Control tutor;
+
 	public override void _Ready() {
 		base._Ready();
 		backgroundPlayer = (AudioStreamPlayer) GetNode("BackgroundMusicPlayer");
@@ -16,6 +19,11 @@ public partial class TitleScene : Control {
 		AudioStreamMP3 stream = (AudioStreamMP3) GD.Load("res://Audio/Background/TitleScene.mp3");
 		backgroundPlayer.Stream = stream;
 		backgroundPlayer.Play();
+
+		// open menu, hide tutorial
+		menu = GetNode<Control>("Menu");
+		tutor = GetNode<Control>("Tutorial");
+		HideTutorial();
 	}
 
 	public void StartGame() {
@@ -29,5 +37,15 @@ public partial class TitleScene : Control {
 
 	public void QuitGame() {
 		GetTree().Quit();
+	}
+
+	public void ViewTutorial() {
+		menu.Visible = false;
+		tutor.Visible = true;
+	}
+
+	public void HideTutorial() {
+		menu.Visible = true;
+		tutor.Visible = false;
 	}
 }
