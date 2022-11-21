@@ -32,13 +32,21 @@ public class SpawnerManager : Node2D {
 	private Vector2 ScreenSize;
 	protected Node Scene;
 	protected AudioStreamPlayer AudioPlayer;
+	protected AudioStreamPlayer GunEffectPlayer;
+	protected AudioStreamPlayer ExplosionPlayer;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		CurrentPhase = -1;
 		ScreenSize = GetViewportRect().Size;
 		Scene = GetTree().Root.GetChild(0);
-		AudioPlayer = (AudioStreamPlayer) GetTree().Root.GetChild(0).GetNode("BackgroundMusicPlayer");
+
+		AudioPlayer = (AudioStreamPlayer) Scene.GetNode("BackgroundMusicPlayer");
+		GunEffectPlayer = (AudioStreamPlayer) Scene.GetNode("GunEffectPlayer");
+		GunEffectPlayer.VolumeDb = -2;
+		ExplosionPlayer = (AudioStreamPlayer) Scene.GetNode("ExplosionPlayer");
+		ExplosionPlayer.VolumeDb = -2;
+
 		Player = (Actor) Scene.GetNode("Player");
 		Stat = (StatDisplayer) Scene.GetNode("StatDisplayer");
 		NextPhase();

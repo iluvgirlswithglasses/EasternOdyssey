@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/OnHit-.mp3-2baf1bcb262e911db2694b9cda2881a0.mp3str"
+
+[deps]
+
+source_file="res://Audio/SE/OnHit-.mp3"
+dest_files=[ "res://.import/OnHit-.mp3-2baf1bcb262e911db2694b9cda2881a0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

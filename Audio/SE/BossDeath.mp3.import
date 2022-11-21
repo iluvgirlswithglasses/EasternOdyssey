@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/BossDeath.mp3-60d4e3178aa754e4b254cfa7818e9f62.mp3str"
+
+[deps]
+
+source_file="res://Audio/SE/BossDeath.mp3"
+dest_files=[ "res://.import/BossDeath.mp3-60d4e3178aa754e4b254cfa7818e9f62.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
