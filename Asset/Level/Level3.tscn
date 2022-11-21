@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Asset/UI/GameOverDisplayer.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Asset/UI/HealthBar.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Asset/Spawner/FireFairyFrontlineSpawner.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Asset/Spawner/ForwardFrontlineSpawner.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Script/Spawner/Level3/YuukaSpawner.cs" type="Script" id=12]
+[ext_resource path="res://Asset/UI/GameCompleteDisplayer.tscn" type="PackedScene" id=13]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -363,6 +364,9 @@ EnemyCount = 1
 visible = false
 
 [node name="GameOverDisplayer" parent="." instance=ExtResource( 1 )]
+visible = false
+
+[node name="GameCompleteDisplayer" parent="." instance=ExtResource( 13 )]
 visible = false
 
 [node name="NextStageDisplayer" parent="." instance=ExtResource( 3 )]

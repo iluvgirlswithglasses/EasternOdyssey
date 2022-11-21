@@ -1,0 +1,305 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Asset/Spawner/FireFairyFrontlineSpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Asset/Spawner/ForwardFrontlineSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Script/Spawner/Level3/YuukaSpawner.cs" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="LightFairy-01-00" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1000, 620 )
+EnemyCount = 8
+SpawnRate = 1.0
+EnemyDir = "LightFairy"
+Health = 5
+FireRate = 0.75
+GunDelta = 0.5
+ForwardTime = 20.0
+XForwardSpeed = -50.0
+YForwardSpeed = -100.0
+XAcceleration = 10.0
+YAcceleration = -10.0
+YDistance = 0.0
+
+[node name="LightFairy-01-01" parent="." instance=ExtResource( 2 )]
+position = Vector2( 950, -20 )
+EnemyCount = 8
+SpawnRate = 1.0
+EnemyDir = "LightFairy"
+Health = 5
+FireRate = 0.75
+GunDelta = 0.5
+ForwardTime = 20.0
+XForwardSpeed = -50.0
+YForwardSpeed = 70.0
+XAcceleration = -10.0
+YAcceleration = 10.0
+YDistance = 0.0
+
+[node name="LightFairy-01-02" parent="." instance=ExtResource( 2 )]
+position = Vector2( 950, 620 )
+EnemyCount = 4
+SpawnRate = 1.0
+WaitTime = 3.5
+EnemyDir = "LightFairy"
+Health = 5
+FireRate = 0.75
+GunDelta = 0.5
+ForwardTime = 20.0
+XForwardSpeed = -50.0
+YForwardSpeed = -100.0
+XAcceleration = 10.0
+YAcceleration = -10.0
+YDistance = 0.0
+
+[node name="LightFairy-01-03" parent="." instance=ExtResource( 2 )]
+position = Vector2( 900, -20 )
+EnemyCount = 4
+SpawnRate = 1.0
+WaitTime = 3.5
+EnemyDir = "LightFairy"
+Health = 5
+FireRate = 0.75
+GunDelta = 0.5
+ForwardTime = 20.0
+XForwardSpeed = -50.0
+YForwardSpeed = 70.0
+XAcceleration = -10.0
+YAcceleration = 10.0
+YDistance = 0.0
+
+[node name="ShotgunFairy-01-04" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, 150 )
+EnemyCount = 2
+WaitTime = 3.0
+EnemyDir = "ShotgunFairy"
+Health = 20
+FireRate = 2.5
+GunDelta = 1.0
+ForwardTime = 1.0
+YDistance = 300.0
+
+[node name="FireFairy-02-00" parent="." instance=ExtResource( 1 )]
+position = Vector2( 850, -20 )
+EnemyCount = 5
+SpawnRate = 1.0
+
+[node name="WindFairy-02-01" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, 450 )
+EnemyCount = 4
+SpawnRate = 0.5
+WaitTime = 3.0
+EnemyDir = "WindFairy"
+Health = 5
+RelativeToPlayer = 0
+ForwardTime = 1.0
+YDistance = -75.0
+
+[node name="LightFairy-02-02" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, 465 )
+EnemyCount = 5
+SpawnRate = 0.5
+WaitTime = 3.5
+EnemyDir = "LightFairy"
+Health = 5
+FireRate = 1.0
+RelativeToPlayer = 0
+ForwardTime = 1.5
+YDistance = -80.0
+
+[node name="CryoButterfly-03-00" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, 300 )
+EnemyCount = 1
+EnemyDir = "CryoButterfly"
+Health = 120
+
+[node name="WindFairy-03-01" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, 100 )
+EnemyCount = 2
+SpawnRate = 0.5
+WaitTime = 6.0
+EnemyDir = "WindFairy"
+Health = 4
+FireRate = 1.5
+GunDelta = 0.5
+RelativeToPlayer = 0
+ForwardTime = 1.0
+
+[node name="WindFairy-03-02" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, 500 )
+EnemyCount = 2
+SpawnRate = 0.5
+WaitTime = 9.0
+EnemyDir = "WindFairy"
+Health = 4
+FireRate = 1.5
+GunDelta = 0.5
+RelativeToPlayer = 0
+ForwardTime = 1.0
+YDistance = -75.0
+
+[node name="ShotgunFairy-04-00" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, 225 )
+EnemyCount = 2
+EnemyDir = "ShotgunFairy"
+Health = 75
+FireRate = 2.0
+GunDelta = 1.0
+RelativeToPlayer = 0
+YDistance = 150.0
+
+[node name="WindFairy-04-01" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1000, 620 )
+EnemyCount = 4
+SpawnRate = 0.75
+WaitTime = 7.5
+EnemyDir = "WindFairy"
+Health = 5
+FireRate = 0.5
+ForwardTime = 20.0
+XForwardSpeed = 0.0
+YForwardSpeed = -300.0
+XAcceleration = -20.0
+YAcceleration = -20.0
+YDistance = 0.0
+
+[node name="WindFairy-04-02" parent="." instance=ExtResource( 2 )]
+position = Vector2( 880, -20 )
+EnemyCount = 2
+SpawnRate = 0.75
+WaitTime = 3.0
+EnemyDir = "WindFairy"
+Health = 5
+FireRate = 1.75
+ForwardTime = 20.0
+XForwardSpeed = 0.0
+YForwardSpeed = 180.0
+XAcceleration = -20.0
+YAcceleration = 20.0
+YDistance = 0.0
+
+[node name="VertexFairy-05-00" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, 300 )
+EnemyCount = 1
+EnemyDir = "VertexFairy"
+Health = 150
+FireRate = 6.0
+GunDelta = 3.5
+
+[node name="LightFairy-05-01" parent="." instance=ExtResource( 2 )]
+position = Vector2( 900, -20 )
+EnemyCount = 6
+SpawnRate = 1.0
+WaitTime = 1.5
+EnemyDir = "LightFairy"
+Health = 5
+FireRate = 0.75
+RelativeToPlayer = 0
+ForwardTime = 20.0
+XForwardSpeed = 0.0
+YForwardSpeed = 100.0
+XAcceleration = -25.0
+YDistance = 0.0
+
+[node name="IceFairy-05-02" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, 550 )
+EnemyCount = 2
+WaitTime = 6.0
+Health = 8
+XForwardSpeed = -100.0
+YDistance = -75.0
+
+[node name="CryoButterfly-06-00" parent="." instance=ExtResource( 2 )]
+position = Vector2( 875, -20 )
+EnemyCount = 1
+EnemyDir = "CryoButterfly"
+Health = 70
+RelativeToPlayer = 0
+ForwardTime = 100.0
+Theta = 0.0
+XForwardSpeed = 0.0
+YForwardSpeed = 50.0
+XAcceleration = 5.0
+YDistance = 0.0
+
+[node name="CryoButterfly-06-01" parent="." instance=ExtResource( 2 )]
+position = Vector2( 875, 620 )
+EnemyCount = 1
+EnemyDir = "CryoButterfly"
+Health = 70
+RelativeToPlayer = 0
+ForwardTime = 100.0
+Theta = 0.0
+XForwardSpeed = 0.0
+YForwardSpeed = -50.0
+XAcceleration = 5.0
+YDistance = 0.0
+
+[node name="IceFairy-07-00" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1000, 620 )
+EnemyCount = 3
+SpawnRate = 2.0
+Health = 4
+ForwardTime = 200.0
+Theta = 0.0
+XForwardSpeed = -20.0
+YForwardSpeed = -120.0
+XAcceleration = -10.0
+YDistance = 0.0
+
+[node name="FireFairy-07-01" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1000, 620 )
+EnemyCount = 3
+SpawnRate = 2.0
+WaitTime = 1.0
+EnemyDir = "FireFairy"
+Health = 4
+FireRate = 2.0
+ForwardTime = 200.0
+Theta = 0.0
+XForwardSpeed = -20.0
+YForwardSpeed = -120.0
+XAcceleration = -10.0
+YDistance = 0.0
+
+[node name="IceFairy-07-02" parent="." instance=ExtResource( 2 )]
+position = Vector2( 850, -20 )
+EnemyCount = 3
+SpawnRate = 2.0
+WaitTime = 1.5
+Health = 5
+ForwardTime = 200.0
+Theta = 0.0
+XForwardSpeed = 20.0
+YForwardSpeed = 120.0
+XAcceleration = -10.0
+YDistance = 0.0
+
+[node name="FireFairy-07-03" parent="." instance=ExtResource( 2 )]
+position = Vector2( 850, -20 )
+EnemyCount = 3
+SpawnRate = 2.0
+WaitTime = 2.5
+EnemyDir = "FireFairy"
+Health = 5
+FireRate = 2.0
+ForwardTime = 200.0
+Theta = 0.0
+XForwardSpeed = 20.0
+YForwardSpeed = 120.0
+XAcceleration = -10.0
+YDistance = 0.0
+
+[node name="ShotgunFairy-07-04" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1050, 300 )
+EnemyCount = 1
+WaitTime = 6.0
+EnemyDir = "ShotgunFairy"
+Health = 50
+FireRate = 1.5
+XForwardSpeed = -100.0
+
+[node name="YuukaSpawner" type="Node2D" parent="."]
+position = Vector2( 1200, 300 )
+script = ExtResource( 3 )
+EnemyCount = 1

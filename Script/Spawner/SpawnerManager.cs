@@ -125,7 +125,9 @@ public class SpawnerManager : Node2D {
 		//
 		CurrentPhase++;
 		if (CurrentPhase == Stage.Count) {
-			Stat.AutoDisappear = false;
+			if (PickupLevel.CurrentLevel != PickupLevel.FinalLevel)
+				// the stat will AUTO DISAPPEAR if it's the last level
+				Stat.AutoDisappear = false;
 			StageComplete();
 			return;
 		}
@@ -153,9 +155,9 @@ public class SpawnerManager : Node2D {
 		// 
 		if (PickupLevel.CurrentLevel == PickupLevel.FinalLevel) {
 			// the player won the game
-
-			// if the player pressed "continue" on the title scene
-			// the last level will be played
+			Control ctrl = Scene.GetNode<Control>("GameCompleteDisplayer");
+			ctrl.Visible = true;
+			ctrl.SetProcess(true);
 		} else {
 			// go to next stage
 			Scene.GetNode<Control>("NextStageDisplayer").Visible = true;
