@@ -149,7 +149,7 @@ script = ExtResource( 2 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 437, 300 )
 frames = SubResource( 3 )
-frame = 21
+frame = 19
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite"]
@@ -210,3 +210,4 @@ align = 2
 
 [connection signal="button_down" from="VBoxContainer/Start" to="." method="StartGame"]
 [connection signal="button_down" from="VBoxContainer/Continue" to="." method="ContinueGame"]
+[connection signal="button_down" from="VBoxContainer/Exit" to="." method="QuitGame"]
