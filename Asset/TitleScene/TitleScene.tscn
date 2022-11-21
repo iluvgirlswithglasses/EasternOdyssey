@@ -161,7 +161,7 @@ script = ExtResource( 2 )
 [node name="Background" type="AnimatedSprite" parent="."]
 position = Vector2( 437, 300 )
 frames = SubResource( 3 )
-frame = 12
+frame = 8
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
