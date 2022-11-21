@@ -27,7 +27,16 @@ public class VeloMovementEnemy : Actor {
 	public override void _Process(float delta) {
 		Delta += delta;
 		Velocity = f(Delta);
-		MoveAndSlide(Velocity);
+		Vector2 collision = MoveAndSlide(Velocity);
+		// if (collision != null) {
+		// 	for (int i = 0; i < GetSlideCount(); i++) {
+		// 		var collider = (KinematicBody2D) GetSlideCollision(i).Collider;
+		// 		if (collider.IsInGroup("Player")) {
+		// 			Player player = (Player) GetSlideCollision(i).Collider;
+		// 			player.TakeDamage(1000);
+		// 		}
+		// 	}
+		// }
 		// if out of scene
 		ProcessOutOfScreen();
 	}
