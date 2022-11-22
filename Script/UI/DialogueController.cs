@@ -35,10 +35,14 @@ public class DialogueController : Control {
 		// dialogue
 		if (Input.IsActionJustPressed("next_dialogue")) {
 			if (CurrentDialogue == Dialogues.Count) {
-				// next level
+				NextStage();
 			} else {
 				Dialogues[CurrentDialogue++].Visible = true;
 			}
 		}
 	}
+
+    public virtual void NextStage() {
+
+    }
 }
