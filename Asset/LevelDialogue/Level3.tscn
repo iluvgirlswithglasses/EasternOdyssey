@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprite/RawSource/dialogue-bg.jpg" type="Texture" id=1]
+[ext_resource path="res://Font/BRLNSR.tres" type="DynamicFontData" id=2]
+[ext_resource path="res://Script/UI/DialogueController.cs" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 2 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="bg" type="Sprite" parent="."]
+position = Vector2( 539, 250 )
+rotation = 1.5708
+texture = ExtResource( 1 )
+
+[node name="Container" type="VBoxContainer" parent="."]
+margin_left = 100.0
+margin_top = 50.0
+margin_right = 924.0
+margin_bottom = 90.0
+
+[node name="D0" type="Label" parent="Container"]
+margin_right = 824.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 1 )
+text = "The machine-kind in general hates disobedience."
+
+[node name="D1" type="Label" parent="Container"]
+margin_top = 32.0
+margin_right = 824.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 1 )
+text = "I'm on a voyage to the \"Eastern Homeland\"..."
+
+[node name="D2" type="Label" parent="Container"]
+margin_top = 64.0
+margin_right = 824.0
+margin_bottom = 92.0
+custom_fonts/font = SubResource( 1 )
+text = "...which goes against their command."
+
+[node name="D3" type="Label" parent="Container"]
+margin_top = 96.0
+margin_right = 824.0
+margin_bottom = 155.0
+custom_fonts/font = SubResource( 1 )
+text = "
+So they sent other machines to shot me down"
+
+[node name="D4" type="Label" parent="Container"]
+margin_top = 159.0
+margin_right = 824.0
+margin_bottom = 218.0
+custom_fonts/font = SubResource( 1 )
+text = "
+But I did not fear of death."
+
+[node name="D5" type="Label" parent="Container"]
+margin_top = 222.0
+margin_right = 824.0
+margin_bottom = 250.0
+custom_fonts/font = SubResource( 1 )
+text = "But I did not fear of pain."
+
+[node name="D6" type="Label" parent="Container"]
+margin_top = 254.0
+margin_right = 824.0
+margin_bottom = 282.0
+custom_fonts/font = SubResource( 1 )
+text = "I only feel..."
+
+[node name="D7" type="Label" parent="Container"]
+margin_top = 286.0
+margin_right = 824.0
+margin_bottom = 345.0
+custom_fonts/font = SubResource( 1 )
+text = "
+...Alive"
+
+[node name="Tutorial" type="Label" parent="."]
+margin_left = 100.0
+margin_top = 550.0
+margin_right = 924.0
+margin_bottom = 578.0
+custom_fonts/font = SubResource( 1 )
+text = "Press \"space\" to continue"
+align = 1
