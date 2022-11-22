@@ -11,12 +11,19 @@ public class DialogueController : Control {
 	protected int CurrentDialogue = 1; 
 	List<Label> Dialogues;
 
+	protected AudioStreamPlayer AudioPlayer;
 	protected Label Tutor;
 	protected Control Container;
 
 	public override void _Ready() {
 		Tutor = GetNode<Label>("Tutorial");
 		Container = GetNode<Control>("Container");
+		AudioPlayer = GetNode<AudioStreamPlayer>("BackgroundMusic");
+
+		AudioStreamMP3 stream = (AudioStreamMP3) GD.Load("res://Audio/Background/doll.mp3");
+		AudioPlayer.Stream = stream;
+		AudioPlayer.VolumeDb = -4;
+		AudioPlayer.Play();
 
 		Dialogues = new List<Label>();
 		foreach (Label i in Container.GetChildren()) {

@@ -111,3 +111,5 @@ margin_bottom = 578.0
 custom_fonts/font = SubResource( 1 )
 text = "Press \"space\" to continue"
 align = 1
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]

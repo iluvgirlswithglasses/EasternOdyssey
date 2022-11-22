@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/doll.mp3-98f017d03d0d587a56f8ed2c744d294e.mp3str"
+
+[deps]
+
+source_file="res://Audio/Background/doll.mp3"
+dest_files=[ "res://.import/doll.mp3-98f017d03d0d587a56f8ed2c744d294e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -30,6 +30,7 @@ public partial class TitleScene : Control {
 
 	public void StartGame() {
 		PickupLevel.CurrentLevel = 1;
+		PickupLevel.SaveLevelToFile();
 		ContinueGame();
 	}
 
