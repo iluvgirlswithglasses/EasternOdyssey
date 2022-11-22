@@ -57,6 +57,7 @@ public class Clownpiece : VeloMovementEnemy {
 	}
 
 	public override void AnnounceKill() {
+		base.AnnounceKill();
 		SEPlayer.Stream = DeathSE;
 		SEPlayer.Play();
 	}

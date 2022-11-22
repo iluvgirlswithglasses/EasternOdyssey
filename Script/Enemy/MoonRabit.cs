@@ -45,6 +45,7 @@ public class MoonRabit : VeloMovementEnemy {
 	}
 
 	public override void AnnounceKill() {
+		base.AnnounceKill();
 		SEPlayer.Stream = DeathSE;
 		SEPlayer.Play();
 	}
