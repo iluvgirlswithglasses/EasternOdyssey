@@ -21,4 +21,9 @@ public class GameCompleteDisplayer : GameOverDisplayer {
 			SetProcess(false);
 		}
 	}
+
+	protected override void _on_Title_button_down() {
+		PickupMusic.D = 0f;	// turn off current stage's music
+		GetTree().ChangeScene("res://Asset/LevelDialogue/Ending.tscn");
+	}
 }

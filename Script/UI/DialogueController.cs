@@ -42,7 +42,7 @@ public class DialogueController : Control {
 		}
 	}
 
-    public virtual void NextStage() {
-
-    }
+	public virtual void NextStage() {
+		GetTree().ChangeScene(string.Format("res://Asset/Level/Level{0}.tscn", PickupLevel.CurrentLevel));
+	}
 }

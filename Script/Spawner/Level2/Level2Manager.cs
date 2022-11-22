@@ -7,9 +7,6 @@ public class Level2Manager : SpawnerManager {
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 
-		PickupLevel.CurrentLevel = 2;
-		PickupLevel.SaveLevelToFile();
-
 		AddPhase(new List<string>(){"IceFairy-04-00", "IceFairy-04-01"});	// heal
 		AddPhase(new List<string>(){"IceFairy-05-00", "WindFairy-05-01"});	// NOTE: WindFairy at 0.2 FireRate is SPLENDID
 		AddPhase(new List<string>(){"IceFairy-00-00", "IceFairy-00-01"});

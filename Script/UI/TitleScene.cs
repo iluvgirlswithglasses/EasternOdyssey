@@ -34,7 +34,7 @@ public partial class TitleScene : Control {
 	}
 
 	public void ContinueGame() {
-		GetTree().ChangeScene(string.Format("res://Asset/Level/Level{0}.tscn", PickupLevel.CurrentLevel));
+		GetTree().ChangeScene(string.Format("res://Asset/LevelDialogue/Level{0}.tscn", PickupLevel.CurrentLevel));
 	}
 
 	public void QuitGame() {
