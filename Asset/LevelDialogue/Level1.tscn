@@ -81,7 +81,7 @@ margin_top = 255.0
 margin_right = 824.0
 margin_bottom = 283.0
 custom_fonts/font = SubResource( 1 )
-text = "...us, robots, don't understand"
+text = "...us, robots, don't understand."
 
 [node name="D8" type="Label" parent="Container"]
 margin_top = 287.0
