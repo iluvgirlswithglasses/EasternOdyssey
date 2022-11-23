@@ -44,7 +44,7 @@ public class Spawner : Node2D {
             Delta -= SpawnRate;
             Spawn();
             if (--EnemyCount == 0) {
-                GetParent().RemoveChild(this);
+                if (this != null) GetParent().RemoveChild(this);
                 return;
             }
         }

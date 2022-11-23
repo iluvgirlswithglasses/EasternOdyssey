@@ -60,7 +60,7 @@ public class VeloMovementEnemy : Actor {
 
 	public virtual void ProcessOutOfScreen() {
 		if (ScreenTool.IsOutOfScreenByMargin(GetViewportRect().Size, Position, 100)) {
-			GetParent().RemoveChild(this);
+			if (this != null) GetParent().RemoveChild(this);
 			Manager.CountLoss();
 		}
 	}

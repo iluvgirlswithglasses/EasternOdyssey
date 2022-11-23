@@ -30,7 +30,7 @@ public class Actor : KinematicBody2D {
 		Health -= d;
 		if (Health <= 0) {
 			SummonExplosion();
-			GetParent().RemoveChild(this);
+			if (this != null) GetParent().RemoveChild(this);
 			AnnounceKill();
 		}
 	}

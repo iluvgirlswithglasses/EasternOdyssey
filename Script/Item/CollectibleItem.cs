@@ -28,7 +28,7 @@ public abstract class CollectibleItem : KinematicBody2D {
                 var collider = (KinematicBody2D) GetSlideCollision(i).Collider;
                 if (collider.IsInGroup("Player")) {
                     OnPlayerContact();
-                    GetParent().RemoveChild(this);
+                    if (this != null) GetParent().RemoveChild(this);
                 }
             }
         }

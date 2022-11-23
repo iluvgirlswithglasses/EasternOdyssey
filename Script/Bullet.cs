@@ -56,12 +56,12 @@ public class Bullet : KinematicBody2D {
 		}
 		// check if out of scene
 		if (ScreenTool.IsOutOfScreen(GetViewportRect().Size, Position))
-			GetParent().RemoveChild(this);
+			if (this != null) GetParent().RemoveChild(this);
 	}
 
 	public virtual void Destroy() {
 		// add effect here
-		if (this != null)
-			GetParent().RemoveChild(this);
+
+		if (this != null) GetParent().RemoveChild(this);
 	}
 }
