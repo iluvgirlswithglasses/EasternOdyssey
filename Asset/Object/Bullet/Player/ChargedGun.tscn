@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Sprite/Object/Bullet/LaserSprites/11.png" type="Texture" id=1]
+[ext_resource path="res://Script/Bullet.cs" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 27.5, 5 )
+
+[node name="BulletBody" type="KinematicBody2D" groups=["EnemyBullet"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 13.5, 0 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 16.55, 0 )
+scale = Vector2( 0.332932, 0.3 )
+texture = ExtResource( 1 )

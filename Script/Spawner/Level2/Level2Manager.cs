@@ -19,7 +19,7 @@ public class Level2Manager : SpawnerManager {
 		base._Ready();
 		
 		Collectible = new List<string>(){
-			"HealingItem", "", "", "", "HealingItem", "", "", "HealingItem", "",
+			"HealingItem", "", "", "", "HealingItem", "", "GunUpgradeItem", "HealingItem", "",
 		};
 
 		// Pierrot of the Star-Spangled Banner 

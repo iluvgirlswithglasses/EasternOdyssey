@@ -19,7 +19,7 @@ public class Level3Manager : SpawnerManager {
 		base._Ready();
 		
 		Collectible = new List<string>(){
-			"", "", "HealingItem", "", "HealingItem", "", "HealingItem", "HealingItem", "",
+			"", "", "HealingItem", "", "HealingItem", "GunUpgradeItem", "HealingItem", "HealingItem", "",
 		};
 
 		// Faraway Voyage of 380,000 Kilometers 

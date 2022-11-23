@@ -4,3 +4,4 @@
 
 [node name="PistolGunNode" type="Node2D"]
 script = ExtResource( 1 )
+DAMAGE = 2
