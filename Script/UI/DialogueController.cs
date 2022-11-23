@@ -35,7 +35,7 @@ public class DialogueController : Control {
 		Tutor.SelfModulate = new Color(0, 0, 0, 0);
 	}
 
-	public override void _Process(float delta) {
+	public override void _PhysicsProcess(float delta) {
 		// tutorial animation
 		Delta += delta;
 		Tutor.SelfModulate = new Color(1, 1, 1, (float) Math.Cos(Delta));

@@ -53,7 +53,7 @@ public class SpawnerManager : Node2D {
 	}
 
 	// this is mostly used for checking user input
-	public override void _Process(float delta) {
+	public override void _PhysicsProcess(float delta) {
 		if (Input.IsActionJustPressed("restart_level")) {
 			Retry();
 		}
@@ -144,7 +144,7 @@ public class SpawnerManager : Node2D {
 		GD.Print(String.Format("Phase = {0}; Count = {1}", CurrentPhase, PhaseEnemyCount));
 		// enable spawners in this phase
 		foreach (Spawner s in Stage[CurrentPhase]) {
-			s.SetProcess(true);
+			s.SetPhysicsProcess(true);
 			s.PlayPhaseMusic();
 		}
 	}
@@ -165,7 +165,7 @@ public class SpawnerManager : Node2D {
 			// the player won the game
 			Control ctrl = Scene.GetNode<Control>("GameCompleteDisplayer");
 			ctrl.Visible = true;
-			ctrl.SetProcess(true);
+			ctrl.SetPhysicsProcess(true);
 		} else {
 			// go to next stage
 			Scene.GetNode<Control>("NextStageDisplayer").Visible = true;
@@ -200,7 +200,7 @@ public class SpawnerManager : Node2D {
 		foreach (string i in ls) {
 			Spawner child = GetNode<Spawner>(i);
 			// spawners are disable before their phase begins
-			child.SetProcess(false);
+			child.SetPhysicsProcess(false);
 			objs.Add(child);
 		}
 		Stage.Add(objs);

@@ -34,7 +34,7 @@ public class Player : Actor {
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(float delta) {
+	public override void _PhysicsProcess(float delta) {
 		if (!IsDeath) {
 			// Get the input direction and handle the movement/deceleration.
 			// As good practice, you should replace UI actions with custom gameplay actions.

@@ -19,7 +19,7 @@ public class Gun : Node2D {
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(float d) {
+	public override void _PhysicsProcess(float d) {
 		Delta += d;
 		if (Delta >= FireRate) {
 			Shoot();

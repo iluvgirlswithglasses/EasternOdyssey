@@ -21,8 +21,8 @@ public class Clownpiece : VeloMovementEnemy {
 		// some guns that are disabled by default
 		pistol1 = GetNode<IceFairyGun>("PistolGun1");
 		pistol2 = GetNode<IceFairyGun>("PistolGun2");
-		pistol1.SetProcess(false);
-		pistol2.SetProcess(false);
+		pistol1.SetPhysicsProcess(false);
+		pistol2.SetPhysicsProcess(false);
 		// movement
 		f = (d) => {
 			// the first 2 seconds
@@ -50,8 +50,8 @@ public class Clownpiece : VeloMovementEnemy {
 	public override void TakeDamage(int d) {
 		base.TakeDamage(d);
 		if (Health <= FurryThreshold) {
-			pistol1.SetProcess(true);
-			pistol2.SetProcess(true);
+			pistol1.SetPhysicsProcess(true);
+			pistol2.SetPhysicsProcess(true);
 		}
 		healthDisp.SetCurrentHealth(Health);
 	}

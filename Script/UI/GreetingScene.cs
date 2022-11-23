@@ -15,7 +15,7 @@ public partial class GreetingScene : Control {
 		Visible = true;
 	}
 
-	public override void _Process(float delta) {
+	public override void _PhysicsProcess(float delta) {
 		TimeShown += delta;
 		
 		if (TimeShown <= AnimationDuration)
@@ -26,7 +26,7 @@ public partial class GreetingScene : Control {
 		else if (TimeShown >= MaxTimeShown) {
 			Modulate = new Color(0, 0, 0, 0);
 			Visible = false;
-			SetProcess(false);
+			SetPhysicsProcess(false);
 		}
 	}
 }

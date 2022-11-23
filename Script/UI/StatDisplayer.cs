@@ -35,7 +35,7 @@ public class StatDisplayer : Control {
 		Modulate = new Color(0, 0, 0, 0);
 	}
 
-	public override void _Process(float delta) {
+	public override void _PhysicsProcess(float delta) {
 		if (IsShown) {
 			TimeShown += delta;
 
@@ -52,7 +52,7 @@ public class StatDisplayer : Control {
 			}
 		} else {
 			Modulate = new Color(0, 0, 0, 0);
-			SetProcess(false);
+			SetPhysicsProcess(false);
 		}
 	}
 
@@ -60,6 +60,6 @@ public class StatDisplayer : Control {
 		IsShown = true;
 		TimeShown = 0f;
 		Visible = true;
-		SetProcess(true);
+		SetPhysicsProcess(true);
 	}
 }

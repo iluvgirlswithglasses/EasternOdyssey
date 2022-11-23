@@ -33,7 +33,7 @@ public class Yuuka : VeloMovementEnemy {
 		
 		// phases
 		FurryGun = GetNode<SpiralGun>("FurryGun");
-		FurryGun.SetProcess(false);
+		FurryGun.SetPhysicsProcess(false);
 
 		//
 		DeathSE.Loop = false;
@@ -47,7 +47,7 @@ public class Yuuka : VeloMovementEnemy {
 			return;
 		// 
 		if (Health <= FurryThreshold) {
-			FurryGun.SetProcess(true);
+			FurryGun.SetPhysicsProcess(true);
 		}
 	}
 

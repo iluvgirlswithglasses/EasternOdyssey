@@ -9,16 +9,16 @@ public class GameCompleteDisplayer : GameOverDisplayer {
 		base._Ready();
 		this.Modulate = new Color(0, 0, 0, 0);
 		this.Visible = false;
-		this.SetProcess(false);
+		this.SetPhysicsProcess(false);
 	}
 
-	public override void _Process(float delta) {
+	public override void _PhysicsProcess(float delta) {
 		Delta += delta;
 		if (AnimationDuration < Delta) {
 			Modulate = new Color(1, 1, 1, (Delta - AnimationDuration) / AnimationDuration);
 		}
 		if (Delta >= AnimationDuration * 2) {
-			SetProcess(false);
+			SetPhysicsProcess(false);
 		}
 	}
 

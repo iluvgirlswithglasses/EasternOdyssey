@@ -10,8 +10,8 @@ public class Explosion : AnimatedSprite {
 		this.Frame = 0;
 	}
 
-	public override void _Process(float delta) {
-		base._Process(delta);
+	public override void _PhysicsProcess(float delta) {
+		base._PhysicsProcess(delta);
 		Delta += delta;
 		if (Delta >= SelfDestructTime)
 			GetParent().RemoveChild(this);

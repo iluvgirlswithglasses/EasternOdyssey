@@ -24,7 +24,7 @@ public class VeloMovementEnemy : Actor {
 		CollisionMask = Constants.ENEMY_LAYER;
 	}
 
-	public override void _Process(float delta) {
+	public override void _PhysicsProcess(float delta) {
 		Delta += delta;
 		Velocity = f(Delta);
 		Vector2 collision = MoveAndSlide(Velocity);

@@ -16,8 +16,8 @@ public abstract class CollectibleItem : KinematicBody2D {
         PlayerObj = (Player) Scene.GetNode("Player");
     }
 
-    public override void _Process(float delta) {
-        base._Process(delta);
+    public override void _PhysicsProcess(float delta) {
+        base._PhysicsProcess(delta);
         Velocity = new Vector2(
             Velocity.x + Acceleration * delta,
             0

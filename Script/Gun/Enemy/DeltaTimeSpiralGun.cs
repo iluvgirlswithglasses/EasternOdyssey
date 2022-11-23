@@ -35,7 +35,7 @@ public class DeltaTimeSpiralGun : GunAdv {
 		FirstBulletAlpha = FirstBulletAlpha / 180 * (float) PI;
 	}
 
-	public override void _Process(float d) {
+	public override void _PhysicsProcess(float d) {
 		if (OpeningFire) {
 			FiredTime += d;
 			if (FiredTime >= BulletDelta) {
