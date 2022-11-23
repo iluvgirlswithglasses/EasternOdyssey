@@ -61,7 +61,7 @@ public class Bullet : KinematicBody2D {
 
 	public virtual void Destroy() {
 		// add effect here
-
-		GetParent().RemoveChild(this);
+		if (this != null)
+			GetParent().RemoveChild(this);
 	}
 }

@@ -20,6 +20,7 @@ outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 8 )
 
 [node name="Node2D" type="Node2D"]
+position = Vector2( 0, 1 )
 
 [node name="Stage1" type="Sprite" parent="."]
 position = Vector2( 512, 300 )
