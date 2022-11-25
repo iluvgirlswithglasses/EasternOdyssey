@@ -43,6 +43,7 @@ margin_bottom = 20.0
 position = Vector2( 175, 300 )
 
 [node name="SpawnerManager" type="Node2D" parent="."]
+pause_mode = 2
 script = ExtResource( 9 )
 
 [node name="IceFairy-04-00" parent="SpawnerManager" instance=ExtResource( 4 )]
@@ -300,6 +301,7 @@ visible = false
 visible = false
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 
 [node name="UIEffectPlayer" type="AudioStreamPlayer" parent="."]
 

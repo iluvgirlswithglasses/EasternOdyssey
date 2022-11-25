@@ -43,6 +43,7 @@ margin_bottom = 20.0
 position = Vector2( 175, 300 )
 
 [node name="SpawnerManager" type="Node2D" parent="."]
+pause_mode = 2
 script = ExtResource( 8 )
 
 [node name="PyroButterfly-00-00" parent="SpawnerManager" instance=ExtResource( 11 )]
@@ -388,6 +389,7 @@ text = "Stage 3:
 Mountain of Faith        "
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 
 [node name="UIEffectPlayer" type="AudioStreamPlayer" parent="."]
 

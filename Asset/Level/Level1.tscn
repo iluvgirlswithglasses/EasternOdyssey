@@ -44,6 +44,7 @@ margin_bottom = 20.0
 position = Vector2( 175, 300 )
 
 [node name="SpawnerManager" type="Node2D" parent="."]
+pause_mode = 2
 script = ExtResource( 3 )
 
 [node name="LightFairy-00-00" parent="SpawnerManager" instance=ExtResource( 6 )]
@@ -286,6 +287,7 @@ visible = false
 visible = false
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 
 [node name="UIEffectPlayer" type="AudioStreamPlayer" parent="."]
 

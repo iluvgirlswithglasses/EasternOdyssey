@@ -57,6 +57,12 @@ public class SpawnerManager : Node2D {
 		if (Input.IsActionJustPressed("restart_level")) {
 			Retry();
 		}
+		if (Input.IsActionJustPressed("toggle_playing")) {
+			if (GetTree().Paused)
+				GetTree().Paused = false;
+			else
+				GetTree().Paused = true;
+		}
 	}
 
 	/** @ basic */
