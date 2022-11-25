@@ -389,7 +389,6 @@ text = "Stage 3:
 Mountain of Faith        "
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
-pause_mode = 2
 
 [node name="UIEffectPlayer" type="AudioStreamPlayer" parent="."]
 
