@@ -31,6 +31,7 @@ public class SpawnerManager : Node2D {
 
 	private Vector2 ScreenSize;
 	protected Node Scene;
+	protected Control PauseScene;
 	protected AudioStreamPlayer AudioPlayer;
 	protected AudioStreamPlayer GunEffectPlayer;
 	protected AudioStreamPlayer ExplosionPlayer;
@@ -41,6 +42,7 @@ public class SpawnerManager : Node2D {
 		ScreenSize = GetViewportRect().Size;
 		Scene = GetTree().Root.GetChild(0);
 
+		PauseScene = Scene.GetNode<Control>("PauseScene");
 		AudioPlayer = (AudioStreamPlayer) Scene.GetNode("BackgroundMusicPlayer");
 		GunEffectPlayer = (AudioStreamPlayer) Scene.GetNode("GunEffectPlayer");
 		GunEffectPlayer.VolumeDb = -8;
@@ -58,10 +60,7 @@ public class SpawnerManager : Node2D {
 			Retry();
 		}
 		if (Input.IsActionJustPressed("toggle_playing")) {
-			if (GetTree().Paused)
-				GetTree().Paused = false;
-			else
-				GetTree().Paused = true;
+			TooglePlaying();
 		}
 	}
 
@@ -198,6 +197,16 @@ public class SpawnerManager : Node2D {
 	public virtual void Retry() {
 		PickupMusic.D = AudioPlayer.GetPlaybackPosition();
 		GetTree().ReloadCurrentScene();
+	}
+
+	public virtual void TooglePlaying() {
+		if (GetTree().Paused) {
+			GetTree().Paused = false;
+			PauseScene.Visible = false;
+		} else {
+			GetTree().Paused = true;
+			PauseScene.Visible = true;
+		}
 	}
 
 	/** @ tools */
