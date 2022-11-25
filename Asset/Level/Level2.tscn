@@ -305,6 +305,7 @@ visible = false
 visible = false
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
 
 [node name="UIEffectPlayer" type="AudioStreamPlayer" parent="."]
 

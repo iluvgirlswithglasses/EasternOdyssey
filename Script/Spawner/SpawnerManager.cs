@@ -203,9 +203,11 @@ public class SpawnerManager : Node2D {
 		if (GetTree().Paused) {
 			GetTree().Paused = false;
 			PauseScene.Visible = false;
+			AudioPlayer.VolumeDb = 0;
 		} else {
 			GetTree().Paused = true;
 			PauseScene.Visible = true;
+			AudioPlayer.VolumeDb = -12;
 		}
 	}
 

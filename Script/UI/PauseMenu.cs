@@ -14,10 +14,12 @@ public class PauseMenu : Control {
 	}
 
 	protected void Retry() {
+		Manager.TooglePlaying();
 		Manager.Retry();
 	}
 
 	protected void ToTitle() {
+		Manager.TooglePlaying();
 		PickupMusic.D = 0f;	// turn off current stage's music
 		GetTree().ChangeScene("res://Asset/TitleScene/TitleScene.tscn");
 	}
