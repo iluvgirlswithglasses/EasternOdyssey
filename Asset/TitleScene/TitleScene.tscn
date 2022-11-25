@@ -161,7 +161,7 @@ script = ExtResource( 2 )
 [node name="Background" type="AnimatedSprite" parent="."]
 position = Vector2( 437, 300 )
 frames = SubResource( 3 )
-frame = 5
+frame = 4
 playing = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background"]
@@ -255,8 +255,8 @@ margin_top = 294.0
 margin_right = 600.0
 margin_bottom = 353.0
 custom_fonts/font = SubResource( 28 )
-text = "You can also press \"R\"
-to restart a Stage anytime
+text = "You can also press \"R\" to restart a Stage anytime
+Or press \"P\" to pause while playing
 
 See you in space, and Good Luck."
 
